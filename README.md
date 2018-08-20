@@ -20,6 +20,13 @@ Then, update your current configuration (`config.inc.php`) to set the skin prope
 $config['skin'] = 'camila'
 ```
 
+## To-do
+
+* Cleaning up some parts of the code
+* Review some issues with the compose page
+* Accesibility analysis
+* Code review and issues solving
+
 ## Work in progress
 
 `camila` is a work in progress effort, so if you give it a try and want to offer some feedback or report a problem, please do it in the Issues page. If want to make a contribution, please feel free to send a pull request.
