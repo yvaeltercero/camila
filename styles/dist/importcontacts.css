@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+html, body {
+  background-color: #F5F5F5;
+  color: #767676;
+  width: 100%;
+  height: 100vh;
+  font-family: "Roboto", sans-serif !important; }
+
+#importcontacts-component {
+  width: 100%;
+  height: calc(100vh - 80px); }
+  #importcontacts-component .toolbar {
+    height: 50px;
+    line-height: 50px;
+    margin: 0px; }
+    #importcontacts-component .toolbar .toolbar-button {
+      padding-left: 0.7em;
+      padding-right: 0.7em;
+      font-size: 1em;
+      height: 30px;
+      line-height: 30px;
+      background-color: white;
+      color: #8f8f8f;
+      border: 1px solid #c2c2c2;
+      border-radius: 0.5em;
+      text-align: center; }
+  #importcontacts-component .widescreen {
+    height: calc(100vh - 130px - 10px); }
+    #importcontacts-component .widescreen .settings-tab-container {
+      height: calc(100vh - 130px - 10px);
+      background-color: white;
+      border-radius: 1em; }
+      #importcontacts-component .widescreen .settings-tab-container .title {
+        padding: 0.25em;
+        font-size: 2rem;
+        font-weight: bold; }
+      #importcontacts-component .widescreen .settings-tab-container .import-container {
+        padding: 1em; }
+      #importcontacts-component .widescreen .settings-tab-container select {
+        display: block;
+        height: 3em;
+        border: 1px solid #F5F5F5;
+        border-radius: 0.5em;
+        font-size: 1em; }
+      #importcontacts-component .widescreen .settings-tab-container input[type="checkbox"] {
+        display: block;
+        opacity: 1;
+        pointer-events: all; }
+      #importcontacts-component .widescreen .settings-tab-container .submit-button {
+        background-color: white !important;
+        border-radius: 0.5em;
+        border: 1px solid #cccccc;
+        border-bottom: 0.15em solid #204c6f;
+        color: #204c6f;
+        font-weight: bold; }
+
+/*# sourceMappingURL=importcontacts.css.map */

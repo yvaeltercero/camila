@@ -1,0 +1,56 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+
+<head>
+	<title>
+		<roundcube:object name="pagetitle" />
+	</title>
+	<link rel="stylesheet" type="text/css" href="/styles/dist/plugin.css" />
+	<roundcube:include file="/includes/links.html" />
+	<link rel="stylesheet" type="text/css" href="/thirdparty/materialize/css/materialize.css" />
+</head>
+
+<body class="noscroll">
+	<roundcube:include file="/includes/header.html" />
+
+	<div id="plugin-component">
+		<div class="row">
+			<div class="col s12 m12 l2 xl2 hide-on-med-and-down" id="settings-tab">
+				<div class="settings-tab-container">
+					<div class="header">Configuraciones</div>
+					<roundcube:include file="/includes/settingstabs.html" />
+				</div>
+			</div>
+			<div class="col xs12 s12 m12 l10 xl10" id="form-tab">
+				<div class="form-tab-container">
+					<div class="header">
+						<div class="col xs2 s2 m2 l2 xl2">
+							<div class="hide-on-large-only">
+								<span class="back-button" id="form-back"><i class="material-icons left">arrow_back</i></span><br />
+							</div>
+						</div>
+						<div class="col xs8 s8 m8 l8 xl8">
+							Extensión
+						</div>
+						<div class="col xs2 s2 m2 l2 xl2 right-align">
+						</div>
+					</div>
+					<div class="row">
+						<roundcube:object name="plugin.body" />
+					</div>
+					<div class="row">
+						<roundcube:object name="plugin.footer" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	$('#form-back').on('click', function(e) {
+		$('#settings-tab').addClass('hide-on-med-and-down');
+		$('#sections-tab').removeClass('hide-on-med-and-down');
+		$('#form-tab').addClass('hide-on-med-and-down');
+	});
+</script>
+</html>

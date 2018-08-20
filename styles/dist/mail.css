@@ -1,0 +1,384 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+html, body {
+  background-color: #F5F5F5;
+  color: #767676;
+  width: 100%;
+  height: 100vh;
+  font-family: "Roboto", sans-serif; }
+
+#searchmenu {
+  overflow: hidden; }
+  #searchmenu input[type="checkbox"] {
+    position: relative;
+    opacity: 1;
+    pointer-events: all; }
+  #searchmenu input[type="radio"] {
+    position: relative;
+    opacity: 1;
+    pointer-events: all; }
+  #searchmenu select {
+    display: inline;
+    height: 2.5em;
+    font-size: 1em;
+    background-color: #666;
+    color: back;
+    border: 1px solid #5a5a5a; }
+
+#listmenulink {
+  color: #b5b5b5; }
+
+#listoptions-columns label {
+  color: black; }
+
+#mail-component {
+  width: 100%;
+  height: calc(100vh - 130px); }
+  #mail-component .toolbar {
+    height: 50px;
+    line-height: 50px;
+    margin: 0px; }
+    #mail-component .toolbar #search-box-container {
+      height: 50px;
+      line-height: 50px;
+      max-height: 50px;
+      width: 100%;
+      margin: 0em;
+      padding: 0em; }
+      #mail-component .toolbar #search-box-container #buttons-container {
+        height: 50px;
+        line-height: 50px;
+        padding-right: 0.2em;
+        padding-left: 0.2em; }
+        #mail-component .toolbar #search-box-container #buttons-container #searchfilter {
+          width: 75%;
+          display: inline; }
+          #mail-component .toolbar #search-box-container #buttons-container #searchfilter select {
+            display: inline;
+            width: 60%;
+            height: 30px;
+            line-height: 30px;
+            font-size: 1em;
+            background-color: white;
+            border: 1px solid gainsboro;
+            border-radius: 0.5em; }
+        #mail-component .toolbar #search-box-container #buttons-container #quicksearchcombo {
+          width: 25%;
+          display: inline; }
+          #mail-component .toolbar #search-box-container #buttons-container #quicksearchcombo .toolbar-button {
+            padding-left: 0.7em;
+            padding-right: 0.7em;
+            font-size: 1em;
+            height: 30px;
+            line-height: 30px;
+            background-color: white;
+            color: #323232;
+            border: 1px solid #dfdfdf;
+            border-radius: 0.5em;
+            text-align: center; }
+          #mail-component .toolbar #search-box-container #buttons-container #quicksearchcombo .toolbar-button.disabled {
+            background-color: #ECECEC !important;
+            border: 1px solid #666666 !important; }
+      #mail-component .toolbar #search-box-container #form-container {
+        padding-left: 0.2em;
+        height: 50px;
+        line-height: 50px; }
+        #mail-component .toolbar #search-box-container #form-container form {
+          height: 30px;
+          line-height: 30px; }
+          #mail-component .toolbar #search-box-container #form-container form input {
+            width: 100%;
+            margin-top: 10px;
+            height: 30px;
+            line-height: 30px;
+            background-color: white;
+            border: 1px solid gainsboro;
+            border-radius: 0.5em;
+            padding-left: 1em; }
+      #mail-component .toolbar #search-box-container #reset-container {
+        display: inline;
+        padding-right: 0em; }
+        #mail-component .toolbar #search-box-container #reset-container .toolbar-button {
+          padding-left: 0.2em;
+          padding-right: 0.2em;
+          font-size: 1em;
+          height: 30px;
+          line-height: 30px;
+          background-color: white;
+          color: #323232;
+          border: 1px solid #dfdfdf;
+          border-radius: 0.5em;
+          text-align: center;
+          width: 100%; }
+        #mail-component .toolbar #search-box-container #reset-container .toolbar-button.disabled {
+          background-color: #ECECEC !important;
+          border: 1px solid #666666 !important; }
+    #mail-component .toolbar #messagetoolbar {
+      height: 50px;
+      line-height: 50px; }
+      #mail-component .toolbar #messagetoolbar #mailtoolbar {
+        display: inline; }
+      #mail-component .toolbar #messagetoolbar .toolbar-button {
+        padding-left: 0.4em;
+        padding-right: 0.4em;
+        font-size: 0.8em;
+        height: 30px;
+        line-height: 30px;
+        background-color: white;
+        color: #323232;
+        border: 1px solid #dfdfdf;
+        border-radius: 0.5em;
+        text-align: center; }
+        #mail-component .toolbar #messagetoolbar .toolbar-button i.left {
+          font-size: 17.5px;
+          margin-right: 0.1em; }
+        #mail-component .toolbar #messagetoolbar .toolbar-button i.right {
+          font-size: 17.5px;
+          margin-left: 0em;
+          cursor: pointer; }
+        #mail-component .toolbar #messagetoolbar .toolbar-button span {
+          font-weight: bolder; }
+      #mail-component .toolbar #messagetoolbar .toolbar-button.disabled {
+        background-color: #ECECEC !important;
+        border: 1px solid #666666 !important; }
+      #mail-component .toolbar #messagetoolbar .dropdown {
+        font-size: 0em;
+        width: 0em; }
+  #mail-component .widescreen {
+    height: calc(100vh - 130px - 10px);
+    margin: 0em; }
+    #mail-component .widescreen #messagelistcontainer thead {
+      display: none; }
+    #mail-component .widescreen #sidebar {
+      background-color: white;
+      height: calc(100vh - 130px - 10px);
+      border-radius: 1em;
+      border: 1px solid gainsboro; }
+      #mail-component .widescreen #sidebar #sidebar-header {
+        height: 40px;
+        line-height: 40px;
+        background-color: #F4F4F4;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em; }
+        #mail-component .widescreen #sidebar #sidebar-header span.header {
+          font-size: 1em;
+          font-weight: bold;
+          color: #767676; }
+        #mail-component .widescreen #sidebar #sidebar-header .col {
+          max-height: 40px; }
+        #mail-component .widescreen #sidebar #sidebar-header #quotadisplay {
+          font-size: 20px; }
+        #mail-component .widescreen #sidebar #sidebar-header #mailboxmenu-container {
+          height: 40px;
+          line-height: 40px; }
+          #mail-component .widescreen #sidebar #sidebar-header #mailboxmenu-container #mailboxmenulink {
+            color: #767676; }
+            #mail-component .widescreen #sidebar #sidebar-header #mailboxmenu-container #mailboxmenulink i {
+              font-size: 24px;
+              margin-top: 8px; }
+      #mail-component .widescreen #sidebar #mailboxcontainer {
+        height: calc(100vh - 170px - 10px); }
+        #mail-component .widescreen #sidebar #mailboxcontainer #folderlist-content {
+          max-height: calc(100vh - 170px - 10px);
+          overflow: auto; }
+          #mail-component .widescreen #sidebar #mailboxcontainer #folderlist-content #mailboxlist {
+            margin-top: 0em;
+            margin-bottom: 0em;
+            height: calc(100vh - 170px - 10px); }
+            #mail-component .widescreen #sidebar #mailboxcontainer #folderlist-content #mailboxlist li.mailbox {
+              font-size: 1.2em;
+              padding-top: 0.25em;
+              padding-bottom: 0.25em;
+              padding-left: 1em;
+              border-bottom: 0.5px solid whitesmoke; }
+              #mail-component .widescreen #sidebar #mailboxcontainer #folderlist-content #mailboxlist li.mailbox a {
+                color: #101010;
+                display: block; }
+                #mail-component .widescreen #sidebar #mailboxcontainer #folderlist-content #mailboxlist li.mailbox a span.unreadcount {
+                  float: right;
+                  color: white;
+                  height: 20px;
+                  line-height: 20px;
+                  padding-left: 0.25em;
+                  padding-right: 0.25em;
+                  background-color: #204c6f;
+                  border-radius: 0.5em;
+                  margin-right: 1em; }
+              #mail-component .widescreen #sidebar #mailboxcontainer #folderlist-content #mailboxlist li.mailbox a:visited {
+                color: #101010;
+                display: block; }
+              #mail-component .widescreen #sidebar #mailboxcontainer #folderlist-content #mailboxlist li.mailbox li.mailbox {
+                font-size: 1em;
+                border: none; }
+            #mail-component .widescreen #sidebar #mailboxcontainer #folderlist-content #mailboxlist li.mailbox.selected a {
+              font-weight: bold;
+              color: #204c6f; }
+    #mail-component .widescreen #message-preview {
+      background-color: white;
+      position: relative;
+      height: calc(100vh - 130px - 10px);
+      padding: 0em;
+      border-radius: 1em; }
+      #mail-component .widescreen #message-preview iframe {
+        border-radius: 1em;
+        border: 1px solid gainsboro;
+        width: 100%;
+        height: calc(100vh - 130px - 10px); }
+    #mail-component .widescreen #mail-list-container #mail-list {
+      background-color: white;
+      position: relative;
+      height: calc(100vh - 130px - 10px);
+      border-radius: 1em;
+      border: 1px solid #cfcfcf;
+      border-bottom-left-radius: 1em;
+      border-bottom-right-radius: 1em; }
+      #mail-component .widescreen #mail-list-container #mail-list div.collapsed {
+        display: inline-block;
+        vertical-align: middle;
+        height: 18px;
+        width: 20px;
+        padding: 0;
+        background: url(../../images/listicons.png?v=c458.10409) -100px 0 no-repeat;
+        background-color: white;
+        background-position: 0 -1137px;
+        cursor: pointer; }
+      #mail-component .widescreen #mail-list-container #mail-list div.expanded {
+        display: inline-block;
+        vertical-align: middle;
+        height: 18px;
+        width: 20px;
+        padding: 0;
+        background: url(../../images/listicons.png?v=c458.10409) -100px 0 no-repeat;
+        background-position: 0 -1157px;
+        cursor: pointer; }
+      #mail-component .widescreen #mail-list-container #mail-list span.unread {
+        background: url(../../images/listicons.png?v=c458.10409) -100px 0 no-repeat;
+        background-position: 0 -1017px !important; }
+      #mail-component .widescreen #mail-list-container #mail-list .top-header {
+        background-color: #F4F4F4;
+        height: 40px;
+        line-height: 40px;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+        border-bottom: 1px solid #cfcfcf; }
+        #mail-component .widescreen #mail-list-container #mail-list .top-header .pagenavigation {
+          max-height: 40px; }
+          #mail-component .widescreen #mail-list-container #mail-list .top-header .pagenavigation a.button {
+            padding: 0em; }
+          #mail-component .widescreen #mail-list-container #mail-list .top-header .pagenavigation .pagejumper {
+            background-color: white;
+            border: 1px solid grey;
+            border-radius: 0.3em;
+            font-size: 0.8rem;
+            margin-top: 1em;
+            padding: 3px;
+            text-align: center;
+            height: 0.7em;
+            width: 1em; }
+        #mail-component .widescreen #mail-list-container #mail-list .top-header #pagenavigation-buttons {
+          height: 20px; }
+          #mail-component .widescreen #mail-list-container #mail-list .top-header #pagenavigation-buttons .navbutton i {
+            color: #767676; }
+          #mail-component .widescreen #mail-list-container #mail-list .top-header #pagenavigation-buttons .navbutton.disabled i {
+            color: darkgray; }
+        #mail-component .widescreen #mail-list-container #mail-list .top-header #mail-list-options {
+          padding-left: 0.5em;
+          padding-right: 0.5em; }
+        #mail-component .widescreen #mail-list-container #mail-list .top-header #mail-list-options {
+          padding-left: 0.5em;
+          padding-right: 0.5em; }
+        #mail-component .widescreen #mail-list-container #mail-list .top-header #listmenulink {
+          height: 24px; }
+        #mail-component .widescreen #mail-list-container #mail-list .top-header #listmenulink.header-button {
+          padding-left: 0.2em;
+          padding-right: 0.2em;
+          font-size: 1em;
+          height: 24px;
+          line-height: 24px;
+          background-color: white;
+          color: #666666;
+          border: 1px solid #c2c2c2;
+          border-radius: 0.5em;
+          text-align: center; }
+        #mail-component .widescreen #mail-list-container #mail-list .top-header #listselectmenulink.header-button {
+          padding-left: 0.2em;
+          padding-right: 0.1em;
+          font-size: 1em;
+          height: 24px;
+          line-height: 24px;
+          background-color: white;
+          color: #666666;
+          border: 1px solid #c2c2c2;
+          border-radius: 0.5em;
+          text-align: center; }
+          #mail-component .widescreen #mail-list-container #mail-list .top-header #listselectmenulink.header-button i.left {
+            font-size: 18px;
+            margin-right: 0em; }
+          #mail-component .widescreen #mail-list-container #mail-list .top-header #listselectmenulink.header-button i.right {
+            font-size: 18px;
+            margin-left: 0em;
+            cursor: pointer; }
+        #mail-component .widescreen #mail-list-container #mail-list .top-header #listcontrols {
+          display: inline; }
+          #mail-component .widescreen #mail-list-container #mail-list .top-header #listcontrols .header-button {
+            padding-left: 0.3em;
+            padding-right: 0.3em;
+            font-size: 1em;
+            height: 24px;
+            background-color: white;
+            color: #666666;
+            border: 1px solid #c2c2c2;
+            border-radius: 0.5em;
+            text-align: center; }
+            #mail-component .widescreen #mail-list-container #mail-list .top-header #listcontrols .header-button i {
+              color: #767676;
+              line-height: 24px; }
+          #mail-component .widescreen #mail-list-container #mail-list .top-header #listcontrols .header-button.selected i {
+            color: #767676;
+            line-height: 24px; }
+      #mail-component .widescreen #mail-list-container #mail-list #messagelistcontainer {
+        background-color: white;
+        overflow: auto;
+        height: calc(100vh - 170px - 10px);
+        border-bottom-left-radius: 1em;
+        border-bottom-right-radius: 1em; }
+        #mail-component .widescreen #mail-list-container #mail-list #messagelistcontainer table thead {
+          background-color: #dfdfdf;
+          padding: 0.5em 0.5em; }
+          #mail-component .widescreen #mail-list-container #mail-list #messagelistcontainer table thead tr th > a {
+            color: #767676; }
+        #mail-component .widescreen #mail-list-container #mail-list #messagelistcontainer table tbody tr.message {
+          background-color: white;
+          font-size: 1rem;
+          border-bottom: 1px solid whitesmoke; }
+          #mail-component .widescreen #mail-list-container #mail-list #messagelistcontainer table tbody tr.message td {
+            padding: 0.4em; }
+            #mail-component .widescreen #mail-list-container #mail-list #messagelistcontainer table tbody tr.message td a {
+              font-size: 12px;
+              color: #767676; }
+            #mail-component .widescreen #mail-list-container #mail-list #messagelistcontainer table tbody tr.message td span {
+              font-size: 12px;
+              color: #767676; }
+          #mail-component .widescreen #mail-list-container #mail-list #messagelistcontainer table tbody tr.message td.subject a {
+            font-size: 1em;
+            color: #767676; }
+          #mail-component .widescreen #mail-list-container #mail-list #messagelistcontainer table tbody tr.message td.subject span.fromto {
+            display: inline-block;
+            width: 50%;
+            font-size: 1em;
+            color: white; }
+          #mail-component .widescreen #mail-list-container #mail-list #messagelistcontainer table tbody tr.message td.subject span.date {
+            display: inline-block;
+            width: 50%;
+            text-align: right;
+            color: #c2c2c2; }
+          #mail-component .widescreen #mail-list-container #mail-list #messagelistcontainer table tbody tr.message td.subject span.subject {
+            display: inline-block;
+            width: 100%; }
+        #mail-component .widescreen #mail-list-container #mail-list #messagelistcontainer table tbody tr.message.unread td.subject a {
+          font-size: 12px;
+          font-weight: bold;
+          color: #767676; }
+        #mail-component .widescreen #mail-list-container #mail-list #messagelistcontainer table tbody tr.message.selected {
+          background-color: #f2f2f2; }
+
+/*# sourceMappingURL=mail.css.map */

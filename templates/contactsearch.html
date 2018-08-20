@@ -1,0 +1,26 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+<head>
+<title><roundcube:object name="pagetitle" /></title>
+<roundcube:include file="/includes/links.html" />
+<link rel="stylesheet" type="text/css" href="/thirdparty/materialize/css/materialize.css"/>
+<link rel="stylesheet" type="text/css" href="/styles/dist/contactsearch.css" />
+</head>
+<body class="iframe">
+<div id="contactsearch-component">
+	<div class="container">
+		<h2><roundcube:label name="advsearch" /></h1>
+
+		<div id="contact-details" class="boxcontent">
+			<roundcube:object name="searchform" id="advsearchform" class="tabbed" size=30 />
+			<p class="formbuttons">
+				<roundcube:button command="save" type="input" class="btn submit-button" label="search" />
+			</p>
+		</div>
+	</div>
+</div>
+
+<roundcube:include file="/includes/footer.html" />
+
+</body>
+</html>

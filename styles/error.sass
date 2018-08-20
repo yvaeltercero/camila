@@ -1,0 +1,33 @@
+$back-color: #F5F5F5
+$font-color: darken($back-color, 50%)
+$topline-height: 20px
+@import url('https://fonts.googleapis.com/css?family=Roboto')
+
+html, body
+  background-color: $back-color
+  height: 100vh !important
+  width: 100%
+  font-family: 'Roboto', sans-serif
+
+#error-component
+  background-color: $back-color
+  height: 100vh
+
+  .error-container
+    height: 20vh
+    margin: 40vh
+    background-color: white
+    border: 1px solid darken($back-color, 10%)
+    border-radius: 1em
+    overflow: auto
+
+    .error-title
+      padding-left: 1em
+      font-size: 2em
+      font-weight: bold
+      color: lighten($font-color, 10%)
+
+    .error-text
+      padding-left: 2em
+      font-size: 1em
+      color: lighten($font-color, 25%)

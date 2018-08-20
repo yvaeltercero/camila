@@ -1,0 +1,177 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+
+<head>
+	<title>
+		<roundcube:object name="pagetitle" />
+	</title>
+	<roundcube:include file="/includes/links.html" />
+	<link rel="stylesheet" type="text/css" href="/thirdparty/materialize/css/materialize.css" />
+	<link rel="stylesheet" type="text/css" href="/styles/dist/message.css" />
+</head>
+
+<body class="noscroll">
+	<roundcube:include file="/includes/header.html" />
+
+	<div id="message-component">
+
+		<div class="row toolbar">
+			<div class="col xs12 s12 m12 l12 xl12">
+				<h2 id="aria-label-toolbar" class="voice"><roundcube:label name="arialabeltoolbar" /></h2>
+				<div id="messagetoolbar" class="toolbar" role="toolbar" aria-labelledby="aria-label-toolbar">
+					<roundcube:include file="/includes/mailtoolbar.html" />
+				</div>
+			</div>
+		</div>
+
+		<div class="row widescreen">
+			<div id="sidebar-container" class="col l2 xl2 hide-on-med-and-down">
+				<div id="sidebar">
+					<div id="sidebar-header">
+						<span>Casilleros</h1>
+					</div>
+					<div id="mailboxcontainer" role="navigation" aria-labelledby="aria-label-folderlist">
+						<h2 id="aria-label-folderlist" class="voice"><roundcube:label name="arialabelfolderlist" /></h2>
+
+						<div id="folderlist-content">
+							<roundcube:object name="mailboxlist" id="mailboxlist" folder_filter="mail" unreadwrap="%s" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="message-container" class="col xs12 s12 m12 l10 xl10">
+				<div id="message">
+					<div id="subject-and-navigation">
+						<div class="col xs6 s6 m6 l6 xl6">
+							<div class="subject">
+								<span onmouseover="rcube_webmail.long_subject_title(this)">
+									<span class="voice"><roundcube:label name="subject" />: </span>
+									<roundcube:object name="messageHeaders" valueOf="subject" />
+								</span>
+							</div>
+						</div>
+						<div class="col xs6 s6 m6 l6 xl6 right-align">
+							<div id="countcontrols" class="pagenav" role="navigation" aria-labelledby="aria-label-countcontrols">
+								<h2 id="aria-label-countcontrols" class="voice"><roundcube:label name="arialabelmessagenav" /></h2>
+								<roundcube:object name="messageCountDisplay" class="countdisplay" />
+								<roundcube:button command="previousmessage" type="link" title="previousmessage" label="previous" class="btn header-button disabled z-depth-0" classAct="btn header-button z-depth-0" id="previous-message"/>
+								<roundcube:button command="nextmessage" type="link" title="nextmessage" label="next" class="btn header-button disabled z-depth-0" classAct="btn header-button z-depth-0" id="next-message"/>
+							</div>
+						</div>
+					</div>
+					<div id="headers-and-message">
+					  <div id="headers">
+					    <div class="col xs11 s11 m11 l11 xl11">
+					      <div class="message-headers">
+					        <roundcube:object name="messageHeaders" class="headers-table" addicon="/images/addcontact.png" exclude="subject" max="20" />
+					      </div>
+					    </div>
+					    <div class="col xs1 s1 m1 l1 xl1">
+					      <div class="row" id="show-more-right">
+					        <a href="#fullheaders" id="fullheaderstoggle" aria-expanded="false">
+					          <ia id="show-full-headers-icon" class="tiny material-icons">arrow_drop_down</ia>
+					        </a>
+					      </div>
+					    </div>
+					  </div>
+					  <div id="message-content">
+					    <div class="footer">
+					      <h2 id="aria-label-messageattachments" class="voice"><roundcube:label name="attachments" /></h2>
+					      <roundcube:object name="messageAttachments" id="attachment-list" class="attachmentslist" />
+					    </div>
+					    <h2 id="aria-label-messagebody" class="voice"><roundcube:label name="arialabelmessagebody" /></h2>
+					    <roundcube:object name="messageObjects" id="message-objects" />
+					    <roundcube:object name="messageBody" id="messagebody" headertableclass="message-partheaders headers-table" />
+					  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<roundcube:include file="/includes/mailboxmenu.html" />
+	<div id="attachmentmenu" class="popupmenu" aria-hidden="true">
+		<ul class="toolbarmenu" id="attachmentoptionsmenu" role="menu">
+			<roundcube:button command="open-attachment" id="attachmenuopen" type="link-menuitem" label="open" class="icon" classAct="icon active" innerclass="icon extwin" />
+			<roundcube:button command="download-attachment" id="attachmenudownload" type="link-menuitem" label="download" class="icon" classAct="icon active" innerclass="icon download" />
+			<roundcube:container name="attachmentmenu" id="attachmentoptionsmenu" />
+		</ul>
+	</div>
+	<roundcube:include file="/includes/footer.html" />
+	<script>
+		const mq = window.matchMedia("(max-width: 992px)");
+
+		mq.addListener(handleMediaQuery);
+
+		function handleMediaQuery(mediaQuery) {
+			if (mediaQuery.matches) {
+				$('#header-component').addClass('mobile-header');
+			} else {
+				$('#header-component').removeClass('mobile-header');
+			}
+		}
+		$(document).ready(function() {
+			handleMediaQuery(mq);
+		});
+	</script>
+	<script>
+		$(document).ready(function() {
+			$('#listmenulink').html('<i class="material-icons">view_list</i>');
+			$('#mailboxmenulink').html('<i class="material-icons">settings</i>');
+			$('#previous-message').html('<i class="material-icons">navigate_before</i>');
+			$('#next-message').html('<i class="material-icons">navigate_next</i>');
+			$('.treetoggle').remove();
+		});
+	</script>
+	<script defer>
+		$('#fullheaderstoggle').on('click', function() {
+			$('.more-headers').click();
+			$('#full-headers-container').slideToggle();
+			if ($('#show-full-headers-icon').html() === 'arrow_drop_down') {
+				$('#show-full-headers-icon').html('arrow_drop_up');
+			} else {
+				$('#show-full-headers-icon').html('arrow_drop_down');
+			}
+		});
+	</script>
+	<script>
+		$(document).ready(function() {
+			String.prototype.format = function() {
+				var i = 0,
+					args = arguments;
+				return this.replace(/{}/g, function() {
+					return typeof args[i] != 'undefined' ? args[i++] : '';
+				});
+			};
+			var buttons = [
+				// class, icon
+				['.checkmail', 'refresh'],
+				['.compose', 'email'],
+				['.reply', 'reply'],
+				['.replyall', 'reply_all', 'replyallmenulink'],
+				['.forward', 'forward', 'forwardmenulink'],
+				['.delete', 'delete'],
+				['.move', 'move_to_inbox'],
+				['.print', 'print'],
+				['.mark', 'markunread_mailbox'],
+				['.more', 'more']
+			];
+			buttons.forEach(function(tuple) {
+				var klass = tuple[0];
+				var icon = tuple[1];
+				var link = tuple[2];
+
+				$(klass).html('<i class="material-icons left">{}</i><span class="hide-on-med-and-down">{}</span>'.format(icon, $(klass).html()));
+
+				if (link !== undefined) {
+					$(klass).html($(tuple[0]).html() + '<i class="material-icons right" id="{}-clicker">arrow_drop_down</i>'.format(link));
+					$('#{}-clicker'.format(link)).on('click', function(e) {
+						e.stopPropagation();
+						$('#{}'.format(link)).click();
+					})
+				}
+			});
+		});
+	</script>
+</body>
+
+</html>

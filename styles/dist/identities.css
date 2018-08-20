@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+html, body {
+  width: 100%;
+  height: 100vh;
+  background-color: #F5F5F5;
+  font-family: "Roboto", sans-serif !important; }
+
+#identities-component {
+  height: calc(100vh - 80px - 20px);
+  background-color: #F5F5F5; }
+  #identities-component .settings-tab-container {
+    height: calc(100vh - 80px - 20px);
+    background-color: white;
+    border-radius: 0.5em;
+    border: 1px solid gainsboro;
+    margin-top: 1em; }
+    #identities-component .settings-tab-container .header {
+      background-color: #F4F4F4;
+      height: 40px;
+      line-height: 40px;
+      color: #767676;
+      font-weight: bolder;
+      text-align: center; }
+    #identities-component .settings-tab-container .settings-tab {
+      height: calc(100vh - 80px - 40px - 20px);
+      -webkit-margin-before: 0em;
+      -webkit-margin-after: 0em; }
+      #identities-component .settings-tab-container .settings-tab li {
+        width: 100%; }
+        #identities-component .settings-tab-container .settings-tab li a {
+          padding-left: 1em;
+          padding-top: 1em;
+          padding-bottom: 1em;
+          font-size: 120%;
+          color: #767676;
+          display: block; }
+        #identities-component .settings-tab-container .settings-tab li a:visited {
+          color: #767676;
+          display: block; }
+      #identities-component .settings-tab-container .settings-tab li:hover {
+        background-color: #e8e8e8;
+        cursor: pointer; }
+      #identities-component .settings-tab-container .settings-tab li.selected a {
+        font-weight: bold;
+        color: #767676; }
+  #identities-component .sections-tab-container {
+    height: calc(100vh - 80px - 20px);
+    background-color: white;
+    border-radius: 0.5em;
+    border: 1px solid gainsboro;
+    margin-top: 1em; }
+    #identities-component .sections-tab-container .header {
+      background-color: #F4F4F4;
+      height: 40px;
+      line-height: 40px;
+      color: #767676;
+      font-weight: bolder;
+      text-align: center; }
+      #identities-component .sections-tab-container .header .back-button i {
+        font-size: 24px;
+        margin-top: 8px; }
+    #identities-component .sections-tab-container .sections-tab {
+      height: calc(100vh - 80px - 40px - 40px - 20px);
+      overflow: auto; }
+      #identities-component .sections-tab-container .sections-tab table tr td {
+        padding-left: 1em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        width: 100%;
+        font-size: 120%;
+        color: #767676; }
+      #identities-component .sections-tab-container .sections-tab table tr td:hover {
+        background-color: #e8e8e8;
+        cursor: pointer; }
+      #identities-component .sections-tab-container .sections-tab table tr.selected td {
+        font-weight: bold;
+        color: #767676; }
+    #identities-component .sections-tab-container .footer {
+      background-color: #F4F4F4;
+      height: 40px;
+      line-height: 40px;
+      color: #767676;
+      font-weight: bolder;
+      text-align: center; }
+  #identities-component .form-tab-container {
+    height: calc(100vh - 80px - 20px);
+    background-color: white;
+    border-radius: 0.5em;
+    border: 1px solid gainsboro;
+    margin-top: 1em; }
+    #identities-component .form-tab-container .header {
+      background-color: #F4F4F4;
+      height: 40px;
+      line-height: 40px;
+      color: #767676;
+      font-weight: bold;
+      text-align: center; }
+      #identities-component .form-tab-container .header .back-button i {
+        font-size: 24px;
+        margin-top: 8px; }
+    #identities-component .form-tab-container .form-tab {
+      height: calc(100vh - 80px - 40px - 40px - 20px); }
+      #identities-component .form-tab-container .form-tab .iframebox {
+        position: relative;
+        height: calc(100vh - 80px - 40px - 40px - 20px);
+        overflow: hidden; }
+        #identities-component .form-tab-container .form-tab .iframebox iframe {
+          border-radius: 0.5em; }
+    #identities-component .form-tab-container .footer {
+      background-color: #F4F4F4;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 0em;
+      margin-bottom: 0em;
+      color: #767676;
+      font-weight: bolder;
+      text-align: center; }
+
+/*# sourceMappingURL=identities.css.map */

@@ -1,0 +1,28 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+
+<head>
+	<title>
+		<roundcube:object name="pagetitle" />
+	</title>
+	<roundcube:include file="/includes/links.html" />
+	<link rel="stylesheet" type="text/css" href="/thirdparty/materialize/css/materialize.css"/>
+	<link rel="stylesheet" type="text/css" href="/styles/dist/responseedit.css" />
+</head>
+
+<body id="responseedit-component">
+	<div class="container">
+		<h2><roundcube:object name="steptitle" /></h2>
+
+		<div id="preferences-details">
+			<roundcube:object name="responseform" class="form" size="60" textareacols="60" textarearows="18" />
+		</div>
+
+		<div class="center-align" id="save-button-container">
+			<roundcube:button command="save" type="input" class="btn submit-button" label="save" id="save-button" />
+		</div>
+	</div
+	<roundcube:include file="/includes/footer.html" />
+</body>
+
+</html>

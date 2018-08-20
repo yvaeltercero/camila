@@ -1,0 +1,229 @@
+$back-color: #F5F5F5
+$font-color: darken($back-color, 50%)
+$header-color: #F4F4F4
+$toolbar-height: 50px
+$folder-list-text-color: #888888
+$forder-list-border-color: #bababa
+$folder-list-selected-color: #c7c5c5
+$folder-list-back-color: #cbcbcb
+$alert-message: #f7769f
+$topline-height: 20px
+$nav-height: 60px
+$header-height: $topline-height + $nav-height
+$toolbar-height: 50px
+$header-toolbar-height: $header-height + $toolbar-height
+$title-height: 40px
+$header-toolbar-title-height: $header-toolbar-height + $title-height
+$widescreen-height: calc(100vh - #{$header-toolbar-height} - 10px)
+$content-height: calc(100vh - #{$header-toolbar-title-height} - 10px)
+$headers-height: 100px
+$message-height: calc(100vh - #{$content-height} - $headers-height)
+@import url('https://fonts.googleapis.com/css?family=Roboto')
+
+html, body
+  background-color: $back-color
+  color: $font-color
+  width: 100%
+  height: 100vh
+  font-family: 'Roboto', sans-serif !important
+
+#message-component
+  width: 100%
+  height: calc(100vh - #{$header-toolbar-height})
+
+  .countdisplay
+    display: inline
+
+  .toolbar
+    height: $toolbar-height
+    line-height: $toolbar-height
+    margin: 0px
+
+    #messagetoolbar
+      height: $toolbar-height
+      line-height: $toolbar-height
+
+      .toolbar-button
+        padding-left: 0.7em
+        padding-right: 0.7em
+        font-size: 1em
+        height: $toolbar-height * 0.60
+        line-height: $toolbar-height * 0.60
+        background-color: white
+        color: lighten($font-color, 10%)
+        border: 1px solid darken($back-color, 20%)
+        border-radius: 0.5em
+        text-align: center
+
+        i.left
+          font-size: $toolbar-height * 0.45
+          margin-right: 0.2em
+
+        i.right
+          font-size: $toolbar-height * 0.45
+          margin-left: 0em
+          cursor: pointer
+
+        span
+          font-weight: bolder
+
+      .dropdown
+        font-size: 0em
+        width: 0em
+
+  .widescreen
+    margin-bottom: 0em
+    #sidebar
+      background-color: white
+      position: relative
+      height: $widescreen-height
+      border-radius: 1em
+      border: 1px solid darken($back-color, 10%)
+
+      #sidebar-header
+        height: $title-height
+        line-height: $title-height
+        background-color: $header-color
+        border-top-left-radius: 1em
+        border-top-right-radius: 1em
+
+        span
+          font-size: 1em
+          font-weight: bold
+          padding-left: 1em
+
+      #mailboxcontainer
+        height: $content-height
+
+        #folderlist-content
+          overflow: auto
+
+          #mailboxlist
+            height: $content-height
+
+            li.mailbox
+              color: lighten($font-color, 15%)
+              font-size: 1.2em
+              padding-top: 0.25em
+              padding-bottom: 0.25em
+              padding-left: 1em
+              border-bottom: 0.5px solid lighten($back-color, 0%)
+
+              a
+                color: lighten($font-color, 15%)
+                display: block
+
+              a:visited
+                color: lighten($font-color, 15%)
+                display: block
+
+              li.mailbox
+                font-size: 1em
+                border: none
+
+            li.mailbox.selected
+              a
+                font-weight: bold
+
+    #message
+      height: $widescreen-height
+      border: 1px solid darken(white, 7%)
+      background-color: white
+      border-radius: 1em
+      padding: 0em
+      margin-bottom: 0em
+
+      #remote-objects-message
+        background-color: $alert-message
+        color: white
+
+      #subject-and-navigation
+        height: $title-height
+        line-height: $title-height
+        background-color: $header-color
+        border: 1px solid darken($back-color, 10%)
+        border-top-left-radius: 1em
+        border-top-right-radius: 1em
+        margin-bottom: 1px
+
+        div.subject
+          font-size: 1.2em
+          font-weight: bold
+          white-space: nowrap
+          overflow: hidden
+          text-overflow: ellipsis
+
+        .header-button
+          padding-left: 0.2em
+          padding-right: 0.2em
+          font-size: 1em
+          height: $title-height * 0.60
+          line-height: $title-height * 0.60
+          background-color: white
+          color: lighten($font-color, 10%)
+          border: 1px solid darken($back-color, 20%)
+          border-radius: 0.5em
+          text-align: center
+
+      #headers-and-message
+        background-color: white
+        overflow: auto
+        height: $content-height
+        border-bottom-left-radius: 1em
+        border-bottom-right-radius: 1em
+        padding: 0em
+        margin: 0em
+
+        #headers
+          background-color: darken($back-color, 10%)
+          border: 1px solid darken($back-color, 10%)
+          margin: 0
+          height: $headers-height
+
+          .headers-table
+            margin-left: 0.25em
+            .adr
+              a
+                font-size: 1em
+                font-weight: bold
+                color: $font-color
+            td
+              padding: 0.25em
+
+          #show-more-right
+            padding: 0em
+            margin: 0px
+            float: right
+
+            a
+              color: $font-color
+
+        #full-headers-container
+          height: 100px
+          overflow: auto
+          padding: 0em
+          margin: 0em
+          #full-headers
+            background-color: $back-color
+
+            #all-headers
+              #headers-source
+                padding: 1em 5em 1em 5em
+                font-family: monospace
+                font-size: 1em
+                color: $font-color
+
+        #message-content
+          padding: 0em
+          margin: 0em
+          height: $message-height
+          overflow: auto
+          border-bottom-left-radius: 1em
+          border-bottom-right-radius: 1em
+
+          #attachment-list
+            background-color: darken($back-color, 15%)
+            padding: 1em
+
+          #messagebody
+            padding: 2em

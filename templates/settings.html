@@ -1,0 +1,89 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+
+<head>
+	<title>
+		<roundcube:object name="pagetitle" />
+	</title>
+	<link rel="stylesheet" type="text/css" href="/styles/dist/settings.css" />
+	<roundcube:include file="/includes/links.html" />
+	<link rel="stylesheet" type="text/css" href="/thirdparty/materialize/css/materialize.css" />
+	<script type="text/javascript" src="/scripts/settings.js" defer></script>
+</head>
+
+<body class="noscroll">
+		<roundcube:include file="/includes/header.html" />
+
+		<div id="settings-component">
+			<div class="row">
+				<div class="col s12 m12 l2 xl2" id="settings-tab">
+					<div class="settings-tab-container">
+						<div class="header">Configuraciones</div>
+						<roundcube:include file="/includes/settingstabs.html" />
+					</div>
+				</div>
+				<div class="col s12 m12 l3 xl3 hide-on-med-and-down" id="sections-tab">
+					<div class="sections-tab-container">
+						<div class="header">
+							<div class="col xs2 s2 m2 l2 xl2">
+								<div class="hide-on-large-only">
+									<span class="back-button" id="sections-back"><i class="material-icons left">arrow_back</i></span><br />
+								</div>
+							</div>
+							<div class="col xs8 s8 m8 l8 xl8">
+								Secciones
+							</div>
+							<div class="col xs2 s2 m2 l2 xl2">
+							</div>
+						</div>
+						<div class="sections-tab">
+							<roundcube:object name="sectionslist" noheader="true" />
+						</div>
+						<div class="footer">
+						</div>
+					</div>
+				</div>
+				<div class="col s12 m12 l7 xl7 hide-on-med-and-down" id="form-tab">
+					<div class="form-tab-container">
+						<div class="header">
+							<div class="col xs2 s2 m2 l2 xl2">
+								<div class="hide-on-large-only">
+									<span class="back-button" id="form-back"><i class="material-icons left">arrow_back</i></span><br />
+								</div>
+							</div>
+							<div class="col xs8 s8 m8 l8 xl8">
+								Formulario
+							</div>
+							<div class="col xs2 s2 m2 l2 xl2"></div>
+						</div>
+						<div class="form-tab">
+							<div class="iframebox">
+								<roundcube:object name="prefsframe" id="preferences-frame" style="width:100%; height:100%" frameborder="0" src="/watermark.html" title="arialabelpreferencesform" scrolling="yes"/>
+							</div>
+						</div>
+						<div class="footer">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<roundcube:include file="/includes/footer.html" />
+	</body>
+	<script defer>
+		function toggleBodyWidth() {
+			var rosterClass = $('#jsxc_roster').attr('class');
+			if (rosterClass === 'jsxc_state_shown') {
+				$('body').css('width', 'calc(100vw - 200px)');
+			} else {
+				$('body').css('width', '100%');
+			}
+		}
+		$(document).ready(function() {
+			$(document).on('ready.roster.jsxc', function (event) {
+		    $('#jsxc_toggleRoster').on('click', toggleBodyWidth);
+				toggleBodyWidth();
+			});
+		});
+	</script>
+</html>

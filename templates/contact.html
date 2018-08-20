@@ -1,0 +1,38 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+<head>
+	<title><roundcube:object name="pagetitle" /></title>
+	<roundcube:include file="/includes/links.html" />
+	<link rel="stylesheet" type="text/css" href="/thirdparty/materialize/css/materialize.css"/>
+	<link rel="stylesheet" type="text/css" href="/styles/dist/contact.css" />
+</head>
+<body>
+	<div class="contact-header"><roundcube:label name="contactproperties" /></div>
+	<div class="container">
+		<div id="contact-details">
+			<roundcube:if condition="strlen(env:sourcename)" />
+				<div id="sourcename"><roundcube:label name="addressbook" />: <roundcube:var name="env:sourcename" /></div>
+			<roundcube:endif />
+
+			<div id="contactphoto"><roundcube:object name="contactphoto" id="contactpic" placeholder="/images/contactpic.png" placeholderGroup="/images/contactgroup.png" /></div>
+			<roundcube:object name="contacthead" id="contacthead" />
+			<br style="clear:both" />
+
+			<div id="contacttabs" class="tabbed">
+				<roundcube:object name="contactdetails" />
+			</div>
+
+		</div>
+
+		<div id="headerbuttons" class="formbuttons center-align">
+			<roundcube:button command="edit" type="input" class="btn submit-button" label="editcontact" condition="!ENV:readonly" />
+			<roundcube:if condition="env:qrcode" />
+			<roundcube:button command="qrcode" type="input" class="button" label="qrcode" />
+			<roundcube:endif />
+		</div>
+
+		<roundcube:include file="/includes/footer.html" />
+	</div>
+
+</body>
+</html>

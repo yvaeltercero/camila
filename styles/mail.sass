@@ -1,0 +1,496 @@
+$back-color: #F5F5F5
+$font-color: darken($back-color, 50%)
+$header-color: #F4F4F4
+$mailbox-color: #101010
+$selected-mailbox-color: #204c6f
+$toolbar-button-color: #323232
+$toolbar-button-border-color: #dfdfdf
+$disabled-toolbar-button-color: #ECECEC
+$disabled-toolbar-button-border-color: #666666
+$toolbar-height: 50px
+$folder-list-text-color: #888888
+$forder-list-border-color: #bababa
+$folder-list-selected-color: #c7c5c5
+$folder-list-back-color: #cbcbcb
+$icon-color: #666666
+$topline-height: 20px
+$nav-height: 60px
+$header-height: $topline-height + $nav-height
+$toolbar-height: 50px
+$header-toolbar-height: $header-height + $toolbar-height
+$title-height: 40px
+$header-toolbar-title-height: $header-toolbar-height + $title-height
+$widescreen-height: calc(100vh - #{$header-toolbar-height} - 10px)
+$content-height: calc(100vh - #{$header-toolbar-title-height} - 10px)
+
+@import url('https://fonts.googleapis.com/css?family=Roboto')
+
+html, body
+  background-color: $back-color
+  color: $font-color
+  width: 100%
+  height: 100vh
+  font-family: 'Roboto', sans-serif
+
+#searchmenu
+  overflow: hidden
+
+  input[type="checkbox"]
+    position: relative
+    opacity: 1
+    pointer-events: all
+
+  input[type="radio"]
+    position: relative
+    opacity: 1
+    pointer-events: all
+
+  select
+    display: inline
+    height: 2.5em
+    font-size: 1em
+    background-color: #666
+    color: back
+    border: 1px solid #5a5a5a
+
+#listmenulink
+  color: lighten($font-color, 25%)
+
+#listoptions-columns
+  label
+    color: black
+
+#mail-component
+  width: 100%
+  height: calc(100vh - #{$header-toolbar-height})
+
+  .toolbar
+    height: $toolbar-height
+    line-height: $toolbar-height
+    margin: 0px
+
+    #search-box-container
+      height: $toolbar-height
+      line-height: $toolbar-height
+      max-height: $toolbar-height
+      width: 100%
+      margin: 0em
+      padding: 0em
+
+      #buttons-container
+        height: $toolbar-height
+        line-height: $toolbar-height
+        padding-right: 0.2em
+        padding-left: 0.2em
+
+        #searchfilter
+          width: 75%
+          display: inline
+          select
+            display: inline
+            width: 60%
+            height: $toolbar-height * 0.60
+            line-height: $toolbar-height * 0.60
+            font-size: 1em
+            background-color: white
+            border: 1px solid darken($back-color, 10%)
+            border-radius: 0.5em
+
+        #quicksearchcombo
+          width: 25%
+          display: inline
+
+          .toolbar-button
+            padding-left: 0.7em
+            padding-right: 0.7em
+            font-size: 1em
+            height: $toolbar-height * 0.60
+            line-height: $toolbar-height * 0.60
+            background-color: white
+            color: $toolbar-button-color
+            border: 1px solid $toolbar-button-border-color
+            border-radius: 0.5em
+            text-align: center
+
+          .toolbar-button.disabled
+            background-color: $disabled-toolbar-button-color !important
+            border: 1px solid $disabled-toolbar-button-border-color !important
+
+      #form-container
+        padding-left: 0.2em
+        height: $toolbar-height
+        line-height: $toolbar-height
+        form
+          height: $toolbar-height * 0.60
+          line-height: $toolbar-height * 0.60
+          input
+            width: 100%
+            margin-top: $toolbar-height * 0.2
+            height: $toolbar-height * 0.60
+            line-height: $toolbar-height * 0.60
+            background-color: white
+            border: 1px solid darken($back-color, 10%)
+            border-radius: 0.5em
+            padding-left: 1em
+
+      #reset-container
+        display: inline
+        padding-right: 0em
+
+        .toolbar-button
+          padding-left: 0.2em
+          padding-right: 0.2em
+          font-size: 1em
+          height: $toolbar-height * 0.60
+          line-height: $toolbar-height * 0.60
+          background-color: white
+          color: $toolbar-button-color
+          border: 1px solid $toolbar-button-border-color
+          border-radius: 0.5em
+          text-align: center
+          width: 100%
+
+        .toolbar-button.disabled
+          background-color: $disabled-toolbar-button-color !important
+          border: 1px solid $disabled-toolbar-button-border-color !important
+
+    #messagetoolbar
+      height: $toolbar-height
+      line-height: $toolbar-height
+
+      #mailtoolbar
+        display: inline
+
+      .toolbar-button
+        padding-left: 0.4em
+        padding-right: 0.4em
+        font-size: 0.8em
+        height: $toolbar-height * 0.60
+        line-height: $toolbar-height * 0.60
+        background-color: white
+        color: $toolbar-button-color
+        border: 1px solid $toolbar-button-border-color
+        border-radius: 0.5em
+        text-align: center
+
+        i.left
+          font-size: $toolbar-height * 0.35
+          margin-right: 0.1em
+
+        i.right
+          font-size: $toolbar-height * 0.35
+          margin-left: 0em
+          cursor: pointer
+
+        span
+          font-weight: bolder
+
+      .toolbar-button.disabled
+        background-color: $disabled-toolbar-button-color !important
+        border: 1px solid $disabled-toolbar-button-border-color !important
+
+      .dropdown
+        font-size: 0em
+        width: 0em
+
+  .widescreen
+    height: $widescreen-height
+    margin: 0em
+
+    #messagelistcontainer
+      thead
+        display: none
+
+    #sidebar
+      background-color: white
+      height: $widescreen-height
+      border-radius: 1em
+      border: 1px solid darken($back-color, 10%)
+
+      #sidebar-header
+        height: $title-height
+        line-height: $title-height
+        background-color: $header-color
+        border-top-left-radius: 1em
+        border-top-right-radius: 1em
+
+        span.header
+          font-size: 1em
+          font-weight: bold
+          color: $font-color
+
+        .col
+          max-height: $title-height
+
+        #quotadisplay
+          font-size: 20px
+
+        #mailboxmenu-container
+          height: $title-height
+          line-height: $title-height
+
+          #mailboxmenulink
+            color: $font-color
+
+            i
+              font-size: $title-height * 0.6
+              margin-top: $title-height * 0.2
+
+
+      #mailboxcontainer
+        height: $content-height
+
+        #folderlist-content
+          max-height: $content-height
+          overflow: auto
+
+          #mailboxlist
+            margin-top: 0em
+            margin-bottom: 0em
+            height: $content-height
+
+            li.mailbox
+              font-size: 1.2em
+              padding-top: 0.25em
+              padding-bottom: 0.25em
+              padding-left: 1em
+              border-bottom: 0.5px solid lighten($back-color, 0%)
+
+              a
+                color: $mailbox-color
+                display: block
+
+                span.unreadcount
+                  float: right
+                  color: white
+                  height: 20px
+                  line-height: 20px
+                  padding-left: 0.25em
+                  padding-right: 0.25em
+                  background-color: $selected-mailbox-color
+                  border-radius: 0.5em
+                  margin-right: 1em
+
+              a:visited
+                color: $mailbox-color
+                display: block
+
+              li.mailbox
+                font-size: 1em
+                border: none
+
+            li.mailbox.selected
+              a
+                font-weight: bold
+                color: $selected-mailbox-color
+
+    #message-preview
+      background-color: white
+      position: relative
+      height: $widescreen-height
+      padding: 0em
+      border-radius: 1em
+
+      iframe
+        border-radius: 1em
+        border: 1px solid darken($back-color, 10%)
+        width: 100%
+        height: $widescreen-height
+
+    #mail-list-container
+      #mail-list
+        background-color: white
+        position: relative
+        height: $widescreen-height
+        border-radius: 1em
+        border: 1px solid darken($back-color, 15%)
+        border-bottom-left-radius: 1em
+        border-bottom-right-radius: 1em
+
+        div.collapsed
+          display: inline-block
+          vertical-align: middle
+          height: 18px
+          width: 20px
+          padding: 0
+          background: url(../../images/listicons.png?v=c458.10409) -100px 0 no-repeat
+          background-color: white
+          background-position: 0 -1137px
+          cursor: pointer
+
+        div.expanded
+          display: inline-block
+          vertical-align: middle
+          height: 18px
+          width: 20px
+          padding: 0
+          background: url(../../images/listicons.png?v=c458.10409) -100px 0 no-repeat
+          background-position: 0 -1157px
+          cursor: pointer
+
+        span.unread
+          background: url(../../images/listicons.png?v=c458.10409) -100px 0 no-repeat
+          background-position: 0 -1017px !important
+
+        .top-header
+          background-color: $header-color
+          height: $title-height
+          line-height: $title-height
+          border-top-left-radius: 1em
+          border-top-right-radius: 1em
+          border-bottom: 1px solid darken($back-color, 15%)
+
+          .pagenavigation
+            max-height: $title-height
+            a.button
+              padding: 0em
+
+            .pagejumper
+              background-color: white
+              border: 1px solid grey
+              border-radius: 0.3em
+              font-size: 0.8rem
+              margin-top: 1em
+              padding: 3px
+              text-align: center
+              height: 0.7em
+              width: 1em
+
+          #pagenavigation-buttons
+            height: 20px
+            .navbutton
+              i
+                color: $font-color
+
+            .navbutton.disabled
+              i
+                color: lighten($font-color, 20%)
+
+
+          #mail-list-options
+            padding-left: 0.5em
+            padding-right: 0.5em
+
+          #mail-list-options
+            padding-left: 0.5em
+            padding-right: 0.5em
+
+          #listmenulink
+            height: $title-height * 0.6
+
+          #listmenulink.header-button
+            padding-left: 0.2em
+            padding-right: 0.2em
+            font-size: 1em
+            height: $title-height * 0.60
+            line-height: $title-height * 0.60
+            background-color: white
+            color: $icon-color
+            border: 1px solid darken($back-color, 20%)
+            border-radius: 0.5em
+            text-align: center
+
+          #listselectmenulink.header-button
+            padding-left: 0.2em
+            padding-right: 0.1em
+            font-size: 1em
+            height: $title-height * 0.60
+            line-height: $title-height * 0.60
+            background-color: white
+            color: $icon-color
+            border: 1px solid darken($back-color, 20%)
+            border-radius: 0.5em
+            text-align: center
+
+            i.left
+              font-size: $title-height * 0.45
+              margin-right: 0em
+
+            i.right
+              font-size: $title-height * 0.45
+              margin-left: 0em
+              cursor: pointer
+
+          #listcontrols
+            display: inline
+
+            .header-button
+              padding-left: 0.3em
+              padding-right: 0.3em
+              font-size: 1em
+              height: $title-height * 0.60
+              background-color: white
+              color: $icon-color
+              border: 1px solid darken($back-color, 20%)
+              border-radius: 0.5em
+              text-align: center
+
+              i
+                color: $font-color
+                line-height: $title-height * 0.60
+
+            .header-button.selected
+              i
+                color: $font-color
+                line-height: $title-height * 0.60
+
+        #messagelistcontainer
+          background-color: white
+          overflow: auto
+          height: $content-height
+          border-bottom-left-radius: 1em
+          border-bottom-right-radius: 1em
+
+          table
+            thead
+              background-color: #dfdfdf
+              padding: 0.5em 0.5em
+              tr
+                th > a
+                  color: $font-color
+
+            tbody
+              tr.message
+                background-color: white
+                font-size: 1rem
+                border-bottom: 1px solid lighten($font-color, 50%)
+
+                td
+                  padding: 0.4em
+                  a
+                    font-size: 12px
+                    color: $font-color
+
+                  span
+                    font-size: 12px
+                    color: $font-color
+
+                td.subject
+                  a
+                    font-size: 1em
+                    color: $font-color
+
+                  span.fromto
+                    display: inline-block
+                    width: 50%
+                    font-size: 1em
+                    color: white
+
+                  span.date
+                    display: inline-block
+                    width: 50%
+                    text-align: right
+                    color: lighten($font-color, 30%)
+
+                  span.subject
+                    display: inline-block
+                    width: 100%
+
+              tr.message.unread
+                td.subject
+                  a
+                    font-size: 12px
+                    font-weight: bold
+                    color: $font-color
+              tr.message.selected
+                background-color: darken(white, 5%)

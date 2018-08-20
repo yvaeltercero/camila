@@ -1,0 +1,80 @@
+$font-color: lighten(black, 30%)
+$back-color: white
+$bottom-color: #204c6f
+@import url('https://fonts.googleapis.com/css?family=Roboto')
+
+#responseedit-component
+  background-color: $back-color
+  font-family: 'Roboto', sans-serif !important
+
+  #save-button-container
+    .submit-button
+      background-color: white !important
+      border-radius: 0.5em
+      border: 1px solid darken(white, 20%)
+      border-bottom: 0.15em solid $bottom-color
+      color: $bottom-color
+      font-weight: bold
+
+  h2
+    font-size: 2rem
+    font-weight: bold
+    color: $font-color
+
+  legend
+    color: $font-color
+    font-weight: bold
+    font-size: 1.5em
+
+  label
+    font-size: 1.1em
+    color: $font-color
+
+  tr
+    td
+      padding: 0.8em
+
+      input[type="checkbox"]
+        opacity: inherit
+        pointer-events: all
+
+
+      input[type="radio"]
+        opacity: inherit
+        pointer-events: all
+
+      input[type="text"]
+        background-color: white
+        font-size: 1.1em
+        border: 1px solid darken($back-color, 10%)
+        border-bottom: 1px solid $bottom-color
+        border-radius: 1em
+        text-align: center
+        margin: 0em
+        height: 2em
+        line-height: 2em
+
+      input[type="text"]:focus
+        border-bottom: 1px solid $bottom-color
+        -webkit-box-shadow: 0 1px 0 0 $bottom-color
+        box-shadow: 0 1px 0 0 $bottom-color
+
+      .select-dropdown
+        background-color: white
+        font-size: 1.1em
+        border: 1px solid darken($back-color, 10%)
+        border-radius: 1em
+        text-align: center
+        margin: 0em
+        height: 2em
+        line-height: 2em
+
+      .dropdown-content
+        height: auto
+        li
+          height: 1em
+          line-height: 1em
+          span
+            color: $font-color
+            font-size: 1em
+            padding: 1em

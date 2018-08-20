@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+html, body {
+  background-color: #F5F5F5;
+  height: 100vh !important;
+  width: 100%;
+  font-family: "Roboto", sans-serif; }
+
+#error-component {
+  background-color: #F5F5F5;
+  height: 100vh; }
+  #error-component .error-container {
+    height: 20vh;
+    margin: 40vh;
+    background-color: white;
+    border: 1px solid gainsboro;
+    border-radius: 1em;
+    overflow: auto; }
+    #error-component .error-container .error-title {
+      padding-left: 1em;
+      font-size: 2em;
+      font-weight: bold;
+      color: #8f8f8f; }
+    #error-component .error-container .error-text {
+      padding-left: 2em;
+      font-size: 1em;
+      color: #b5b5b5; }
+
+/*# sourceMappingURL=error.css.map */

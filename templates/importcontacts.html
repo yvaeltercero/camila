@@ -1,0 +1,68 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+<head>
+<title><roundcube:object name="pagetitle" /></title>
+<link rel="stylesheet" type="text/css" href="/styles/dist/importcontacts.css" />
+<roundcube:include file="/includes/links.html" />
+<link rel="stylesheet" type="text/css" href="/thirdparty/materialize/css/materialize.css" />
+</head>
+<body class="noscroll">
+	<roundcube:include file="/includes/header.html" />
+
+	<div id="importcontacts-component">
+		<div class="row toolbar">
+			<div class="col xs12 s12 m12 l8 xl8">
+				<h2 id="aria-label-toolbar" class="voice"><roundcube:label name="arialabeltoolbar" /></h2>
+				<div id="addressbooktoolbar" class="toolbar" role="toolbar" aria-labelledby="aria-label-toolbar">
+					<roundcube:button command="list" type="link" class="btn toolbar-button z-depth-0 back disabled" classAct="btn toolbar-button z-depth-0 back" classSel="btn toolbar-button z-depth-0 back pressed" label="back" />
+				</div>
+			</div>
+		</div>
+		<div class="row widescreen">
+			<div class="col xs12 s12 m12 l12 xl12" id="settings-tab">
+				<div class="settings-tab-container">
+					<div class="title"><roundcube:label name="importcontacts" /></div>
+
+					<div id="import-box" class="import-container">
+				    <roundcube:object name="importstep" class="form" />
+				    <br/><br>
+				    <p class="center-align">
+				    <roundcube:object name="importnav" class="btn submit-button" />
+				    </p>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<roundcube:include file="/includes/footer.html" />
+
+</body>
+<script type="text/javascript">
+String.prototype.format = function () {
+	var i = 0, args = arguments;
+	return this.replace(/{}/g, function () {
+		return typeof args[i] != 'undefined' ? args[i++] : '';
+	});
+};
+var buttons = [
+	// class, icon
+	['.back', 'arrow_back']
+];
+buttons.forEach(function(tuple) {
+	var klass = tuple[0];
+	var icon = tuple[1];
+	var link = tuple[2];
+
+	$('#addressbooktoolbar').find(klass).html('<i class="material-icons left">{}</i><span class="hide-on-med-and-down">{}</span>'.format(icon, $('#addressbooktoolbar').find(klass).html()));
+
+	if (link !== undefined) {
+		$('#addressbooktoolbar').find(klass).html($(tuple[0]).html() + '<i class="material-icons right" id="{}-clicker">arrow_drop_down</i>'.format(link));
+		$('#{}-clicker'.format(link)).on('click', function(e) {
+			e.stopPropagation();
+			$('#{}'.format(link)).click();
+		})
+	}
+});
+</script>
+</html>

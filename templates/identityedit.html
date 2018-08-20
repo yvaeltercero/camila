@@ -1,0 +1,28 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+
+<head>
+	<title>
+		<roundcube:object name="pagetitle" />
+	</title>
+	<roundcube:include file="/includes/links.html" />
+	<link rel="stylesheet" type="text/css" href="/thirdparty/materialize/css/materialize.css" />
+	<link rel="stylesheet" type="text/css" href="/styles/dist/identityedit.css" />
+</head>
+
+<body id="identityedit-component">
+	<div class="container">
+		<h2><roundcube:object name="steptitle" /></h2>
+
+		<div id="preferences-details" class="boxcontent">
+			<roundcube:object name="identityform" class="form" size="40" textareacols="40" textarearows="6" />
+		</div>
+
+		<div class="center-align" id="save-button-container">
+			<roundcube:button command="save" type="input" class="btn submit-button" label="save" id="save-button" />
+		</div>
+	</div>
+	<roundcube:include file="/includes/footer.html" />
+</body>
+
+</html>

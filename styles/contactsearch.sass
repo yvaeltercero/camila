@@ -1,0 +1,45 @@
+$back-color: #F5F5F5
+$font-color: darken($back-color, 50%)
+$bottom-color: #204c6f
+
+@import url('https://fonts.googleapis.com/css?family=Roboto')
+
+html
+  font-family: 'Roboto', sans-serif !important
+
+  body
+    font-family: 'Roboto', sans-serif !important
+
+  h2
+    font-size: 2rem !important
+  input[type="checkbox"]
+    opacity: inherit !important
+    pointer-events: all !important
+
+  input[type="radio"]
+    opacity: inherit !important
+    pointer-events: all !important
+
+  input[type="text"]
+    background-color: white !important
+    font-size: 1.1em !important
+    border: 1px solid darken($back-color, 10%) !important
+    border-bottom: 1px solid $bottom-color !important
+    border-radius: 1em !important
+    text-align: center !important
+    margin-bottom: 1em !important
+    height: 2em !important
+    line-height: 2em !important
+
+  input[type="text"]:focus
+    border-bottom: 1px solid $bottom-color !important
+    -webkit-box-shadow: 0 1px 0 0 $bottom-color !important
+    box-shadow: 0 1px 0 0 $bottom-color !important
+
+  .submit-button
+    background-color: white !important
+    border-radius: 0.5em !important
+    border: 1px solid darken(white, 20%) !important
+    border-bottom: 0.15em solid $bottom-color !important
+    color: $bottom-color !important
+    font-weight: bold !important

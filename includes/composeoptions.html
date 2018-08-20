@@ -1,0 +1,32 @@
+<div id="composeoptions" role="region" aria-labelledby="aria-label-composeoptions" class="hide-on-med-and-down">
+	<h2 id="aria-label-composeoptions" class="voice"><roundcube:label name="arialabelcomposeoptions" /></h2>
+
+  <!-- htmleditor -->
+	<roundcube:if condition="!in_array('htmleditor', (array)config:dont_override)" />
+  	<span class="compose-option" id="html-editor-container">
+  		<label><roundcube:label name="editortype" />
+  			<roundcube:object name="editorSelector" editorid="composebody" tabindex="4" /></label>
+  	</span>
+	<roundcube:endif />
+
+	<span class="compose-option">
+		<label for="rcmcomposepriority"><roundcube:label name="priority" />
+			<roundcube:object name="prioritySelector" form="form" id="rcmcomposepriority" tabindex="4" /></label>
+	</span>
+	<roundcube:if condition="!in_array('mdn_default', (array)config:dont_override)" />
+  	<span class="compose-option">
+  		<label><roundcube:object name="mdnCheckBox" form="form" id="rcmcomposereceipt" tabindex="4" /> <roundcube:label name="returnreceipt" /></label>
+  	</span>
+	<roundcube:endif />
+	<roundcube:if condition="!in_array('dsn_default', (array)config:dont_override)" />
+  	<span class="compose-option">
+  		<label><roundcube:object name="dsnCheckBox" form="form" id="rcmcomposedsn" tabindex="4" /> <roundcube:label name="dsn" /></label>
+  	</span>
+	<roundcube:endif />
+	<roundcube:if condition="!config:no_save_sent_messages" />
+  	<span class="compose-option">
+  		<label><roundcube:label name="savesentmessagein" /> <roundcube:object name="storetarget" maxlength="30" style="max-width:12em" tabindex="4" /></label>
+  	</span>
+	<roundcube:endif />
+	<roundcube:container name="composeoptions" id="composeoptions" />
+</div>

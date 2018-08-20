@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+html, body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #F5F5F5 !important;
+  font-family: "Roboto", sans-serif !important; }
+
+#plugin-component {
+  height: calc(100vh - 80px - 20px);
+  background-color: #F5F5F5; }
+  #plugin-component .settings-tab-container {
+    height: calc(100vh - 80px - 20px);
+    background-color: white;
+    border-radius: 0.5em;
+    border: 1px solid gainsboro;
+    margin-top: 1em; }
+    #plugin-component .settings-tab-container .header {
+      background-color: #F4F4F4;
+      height: 40px;
+      line-height: 40px;
+      color: #767676;
+      font-weight: bolder;
+      text-align: center; }
+    #plugin-component .settings-tab-container .settings-tab {
+      height: calc(100vh - 80px - 40px - 20px);
+      -webkit-margin-before: 0em;
+      -webkit-margin-after: 0em; }
+      #plugin-component .settings-tab-container .settings-tab li {
+        width: 100%; }
+        #plugin-component .settings-tab-container .settings-tab li a {
+          padding-left: 1em;
+          padding-top: 1em;
+          padding-bottom: 1em;
+          font-size: 120%;
+          color: #767676;
+          display: block; }
+        #plugin-component .settings-tab-container .settings-tab li a:visited {
+          color: #767676;
+          display: block; }
+      #plugin-component .settings-tab-container .settings-tab li:hover {
+        background-color: #e8e8e8;
+        cursor: pointer; }
+      #plugin-component .settings-tab-container .settings-tab li.selected a {
+        font-weight: bold;
+        color: #767676; }
+  #plugin-component .form-tab-container {
+    height: calc(100vh - 80px - 20px);
+    background-color: white;
+    border-radius: 0.5em;
+    border: 1px solid gainsboro;
+    margin-top: 1em;
+    font-size: 1em;
+    color: #767676; }
+    #plugin-component .form-tab-container .header {
+      background-color: #F4F4F4;
+      height: 40px;
+      line-height: 40px;
+      color: #767676;
+      font-weight: bolder;
+      text-align: center; }
+    #plugin-component .form-tab-container .boxtitle {
+      padding: 1em;
+      font-size: 2rem;
+      border-bottom: 0px; }
+    #plugin-component .form-tab-container .boxcontent {
+      padding-left: 3em;
+      padding-right: 3em; }
+      #plugin-component .form-tab-container .boxcontent table {
+        padding-left: 3em;
+        padding-right: 3em; }
+        #plugin-component .form-tab-container .boxcontent table td {
+          padding: 0px; }
+        #plugin-component .form-tab-container .boxcontent table td.title label {
+          font-size: 1rem;
+          color: #767676; }
+      #plugin-component .form-tab-container .boxcontent input[type="password"], #plugin-component .form-tab-container .boxcontent input[type="text"] {
+        background-color: white;
+        font-size: 1.3em;
+        border: 1px solid gainsboro;
+        border-bottom: 1px solid #204c6f;
+        border-radius: 1em;
+        text-align: center;
+        margin: 1em;
+        height: 2em;
+        line-height: 2em; }
+      #plugin-component .form-tab-container .boxcontent input[type="button"] {
+        float: right;
+        background-color: white !important;
+        border-radius: 0.5em;
+        border: 1px solid #cccccc;
+        border-bottom: 0.15em solid #204c6f;
+        color: #204c6f;
+        font-weight: bold;
+        padding-left: 2em;
+        padding-right: 2em; }
+
+/*# sourceMappingURL=plugin.css.map */

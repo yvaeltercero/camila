@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+html, body {
+  width: 100%;
+  height: 100vh;
+  background-color: #F5F5F5;
+  font-family: "Roboto", sans-serif; }
+
+#folders-component {
+  height: calc(100vh - 80px - 20px);
+  background-color: #F5F5F5; }
+  #folders-component .settings-tab-container {
+    height: calc(100vh - 80px - 20px);
+    background-color: white;
+    border-radius: 0.5em;
+    border: 1px solid gainsboro;
+    margin-top: 1em; }
+    #folders-component .settings-tab-container .header {
+      background-color: #F4F4F4;
+      height: 40px;
+      line-height: 40px;
+      margin-bottom: 0em;
+      color: #767676;
+      font-weight: bolder;
+      text-align: center; }
+    #folders-component .settings-tab-container .settings-tab {
+      height: calc(100vh - 80px - 40px - 20px);
+      -webkit-margin-before: 0em;
+      -webkit-margin-after: 0em; }
+      #folders-component .settings-tab-container .settings-tab li {
+        width: 100%; }
+        #folders-component .settings-tab-container .settings-tab li a {
+          padding-left: 1em;
+          padding-top: 1em;
+          padding-bottom: 1em;
+          font-size: 120%;
+          color: #767676;
+          display: block; }
+        #folders-component .settings-tab-container .settings-tab li a:visited {
+          color: #767676;
+          display: block; }
+      #folders-component .settings-tab-container .settings-tab li:hover {
+        background-color: #e8e8e8;
+        cursor: pointer; }
+      #folders-component .settings-tab-container .settings-tab li.selected a {
+        font-weight: bold;
+        color: #767676; }
+  #folders-component .sections-tab-container {
+    height: calc(100vh - 80px - 20px);
+    background-color: white;
+    border-radius: 0.5em;
+    border: 1px solid gainsboro;
+    margin-top: 1em; }
+    #folders-component .sections-tab-container .header {
+      background-color: #F4F4F4;
+      height: 40px;
+      line-height: 40px;
+      margin-bottom: 0em;
+      color: #767676;
+      font-weight: bolder;
+      text-align: center; }
+      #folders-component .sections-tab-container .header .col {
+        height: 40px; }
+      #folders-component .sections-tab-container .header #foldersearch {
+        height: 24px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        background-color: white;
+        border: 1px solid #F5F5F5;
+        border-radius: 0.5em;
+        padding-left: 1em;
+        font-size: 1em;
+        font-weight: normal; }
+      #folders-component .sections-tab-container .header #sections-back i {
+        font-size: 24px;
+        margin-top: 8px; }
+      #folders-component .sections-tab-container .header #show-search-form i {
+        font-size: 24px;
+        margin-top: 8px; }
+    #folders-component .sections-tab-container .sections-tab {
+      height: calc(100vh - 80px - 40px - 40px - 20px);
+      overflow: auto; }
+      #folders-component .sections-tab-container .sections-tab li {
+        width: 100%;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px; }
+        #folders-component .sections-tab-container .sections-tab li a {
+          font-size: 120%;
+          color: #767676;
+          display: block; }
+        #folders-component .sections-tab-container .sections-tab li a:visited {
+          color: #767676;
+          display: block; }
+      #folders-component .sections-tab-container .sections-tab li:hover {
+        cursor: pointer; }
+        #folders-component .sections-tab-container .sections-tab li:hover a {
+          font-weight: bold; }
+      #folders-component .sections-tab-container .sections-tab li.selected a {
+        font-weight: bold;
+        color: #767676; }
+    #folders-component .sections-tab-container .footer {
+      background-color: #F4F4F4;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 0em;
+      margin-bottom: 0em;
+      color: #767676;
+      font-weight: bolder;
+      text-align: center; }
+      #folders-component .sections-tab-container .footer i {
+        color: #767676;
+        font-size: 24px;
+        margin-top: 8px; }
+      #folders-component .sections-tab-container .footer #quotadisplay {
+        font-size: 2em; }
+  #folders-component .form-tab-container {
+    height: calc(100vh - 80px - 20px);
+    background-color: white;
+    border-radius: 1em;
+    border: 1px solid gainsboro;
+    margin-top: 1em; }
+    #folders-component .form-tab-container .header {
+      background-color: #F4F4F4;
+      height: 40px;
+      line-height: 40px;
+      color: #767676;
+      font-weight: bolder;
+      text-align: center; }
+      #folders-component .form-tab-container .header .back-button i {
+        font-size: 24px;
+        margin-top: 8px; }
+    #folders-component .form-tab-container .form-tab {
+      height: calc(100vh - 80px - 40px - 40px - 20px); }
+      #folders-component .form-tab-container .form-tab .iframebox {
+        position: relative;
+        height: calc(100vh - 80px - 40px - 40px - 20px);
+        overflow: hidden; }
+        #folders-component .form-tab-container .form-tab .iframebox iframe {
+          border-radius: 0.5em; }
+    #folders-component .form-tab-container .footer {
+      background-color: #F4F4F4;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 0em;
+      margin-bottom: 0em;
+      color: #767676;
+      font-weight: bolder;
+      text-align: center; }
+
+/*# sourceMappingURL=folders.css.map */

@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+html, body {
+  width: 100%;
+  height: 100vh;
+  background-color: #F5F5F5;
+  font-family: "Roboto", sans-serif; }
+  html ul, body ul {
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em; }
+
+#addressbook-component {
+  background-color: #F5F5F5;
+  width: 100%;
+  height: calc(100vh - 130px); }
+  #addressbook-component .toolbar {
+    height: 50px;
+    line-height: 50px;
+    margin: 0px; }
+    #addressbook-component .toolbar #search-box-container {
+      height: 50px;
+      line-height: 50px;
+      width: 100%;
+      margin: 0em;
+      padding: 0em; }
+      #addressbook-component .toolbar #search-box-container #buttons-container {
+        height: 50px;
+        line-height: 50px;
+        padding-right: 0.2em;
+        padding-left: 0.2em; }
+        #addressbook-component .toolbar #search-box-container #buttons-container #searchfilter {
+          width: 75%;
+          display: inline; }
+          #addressbook-component .toolbar #search-box-container #buttons-container #searchfilter select {
+            display: inline;
+            width: 60%;
+            height: 30px;
+            line-height: 30px;
+            font-size: 1em;
+            background-color: white;
+            border: 1px solid gainsboro;
+            border-radius: 0.5em; }
+        #addressbook-component .toolbar #search-box-container #buttons-container #quicksearchcombo {
+          width: 25%;
+          display: inline; }
+          #addressbook-component .toolbar #search-box-container #buttons-container #quicksearchcombo .toolbar-button {
+            padding-left: 0.7em;
+            padding-right: 0.7em;
+            font-size: 1em;
+            height: 30px;
+            line-height: 30px;
+            background-color: white;
+            color: #8f8f8f;
+            border: 1px solid #c2c2c2;
+            border-radius: 0.5em;
+            text-align: center; }
+      #addressbook-component .toolbar #search-box-container #form-container {
+        padding-left: 0.2em;
+        height: 50px;
+        line-height: 50px; }
+        #addressbook-component .toolbar #search-box-container #form-container form {
+          height: 30px;
+          line-height: 30px; }
+          #addressbook-component .toolbar #search-box-container #form-container form input {
+            width: 100%;
+            margin-top: 10px;
+            height: 30px;
+            line-height: 30px;
+            background-color: white;
+            border: 1px solid gainsboro;
+            border-radius: 0.5em;
+            padding-left: 1em; }
+      #addressbook-component .toolbar #search-box-container #reset-container {
+        display: inline; }
+        #addressbook-component .toolbar #search-box-container #reset-container .toolbar-button {
+          padding-left: 0.2em;
+          padding-right: 0.2em;
+          font-size: 1em;
+          height: 30px;
+          line-height: 30px;
+          background-color: white;
+          color: #8f8f8f;
+          border: 1px solid #c2c2c2;
+          border-radius: 0.5em;
+          text-align: center; }
+    #addressbook-component .toolbar #addressbooktoolbar {
+      height: 50px;
+      line-height: 50px; }
+      #addressbook-component .toolbar #addressbooktoolbar #mailtoolbar {
+        display: inline; }
+      #addressbook-component .toolbar #addressbooktoolbar .toolbar-button {
+        padding-left: 0.7em;
+        padding-right: 0.7em;
+        font-size: 1em;
+        height: 30px;
+        line-height: 30px;
+        background-color: white;
+        color: #8f8f8f;
+        border: 1px solid #c2c2c2;
+        border-radius: 0.5em;
+        text-align: center; }
+        #addressbook-component .toolbar #addressbooktoolbar .toolbar-button i.left {
+          font-size: 22.5px;
+          margin-right: 0.2em; }
+        #addressbook-component .toolbar #addressbooktoolbar .toolbar-button i.right {
+          font-size: 22.5px;
+          margin-left: 0em;
+          cursor: pointer; }
+        #addressbook-component .toolbar #addressbooktoolbar .toolbar-button span {
+          font-weight: bolder; }
+      #addressbook-component .toolbar #addressbooktoolbar .dropdown {
+        font-size: 0em;
+        width: 0em; }
+  #addressbook-component .settings-tab-container {
+    height: calc(100vh - 130px - 10px);
+    background-color: white;
+    border-radius: 0.5em;
+    border: 1px solid gainsboro; }
+    #addressbook-component .settings-tab-container .col {
+      height: 40px;
+      max-height: 40px; }
+    #addressbook-component .settings-tab-container .header {
+      background-color: #F4F4F4;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 0em;
+      margin-bottom: 0em;
+      color: #767676;
+      font-weight: bolder;
+      text-align: center; }
+    #addressbook-component .settings-tab-container .settings-tab {
+      height: calc(calc(100vh - 170px - 10px) - 40px);
+      -webkit-margin-before: 0em;
+      -webkit-margin-after: 0em; }
+      #addressbook-component .settings-tab-container .settings-tab li {
+        width: 100%; }
+        #addressbook-component .settings-tab-container .settings-tab li a {
+          padding-left: 1em;
+          padding-top: 1em;
+          padding-bottom: 1em;
+          font-size: 120%;
+          color: #767676;
+          display: block; }
+        #addressbook-component .settings-tab-container .settings-tab li a:visited {
+          color: #767676;
+          display: block; }
+      #addressbook-component .settings-tab-container .settings-tab li:hover {
+        background-color: #e8e8e8;
+        cursor: pointer; }
+      #addressbook-component .settings-tab-container .settings-tab li.selected a {
+        font-weight: bold;
+        color: #767676; }
+    #addressbook-component .settings-tab-container .footer {
+      background-color: #F4F4F4;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 0em;
+      margin-bottom: 0em;
+      color: #767676;
+      font-weight: bolder;
+      border-bottom-left-radius: 1em;
+      border-bottom-right-radius: 1em;
+      text-align: center; }
+      #addressbook-component .settings-tab-container .footer i {
+        font-size: 24px;
+        margin-top: 8px;
+        color: #767676; }
+  #addressbook-component .sections-tab-container {
+    height: calc(100vh - 130px - 10px);
+    background-color: white;
+    border-radius: 0.5em;
+    border: 1px solid gainsboro;
+    margin: 0em; }
+    #addressbook-component .sections-tab-container .col {
+      height: 40px; }
+    #addressbook-component .sections-tab-container .header {
+      background-color: #F4F4F4;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 0em;
+      margin-bottom: 0em;
+      color: #767676;
+      font-weight: bolder;
+      text-align: center; }
+      #addressbook-component .sections-tab-container .header #pagenavigation-buttons {
+        height: 20px; }
+        #addressbook-component .sections-tab-container .header #pagenavigation-buttons .navbutton i {
+          color: #767676; }
+        #addressbook-component .sections-tab-container .header #pagenavigation-buttons .navbutton.disabled i {
+          color: darkgray; }
+      #addressbook-component .sections-tab-container .header .back-button i {
+        font-size: 24px;
+        margin-top: 8px; }
+    #addressbook-component .sections-tab-container .sections-tab {
+      height: calc(calc(100vh - 170px - 10px) - 40px);
+      overflow: auto; }
+      #addressbook-component .sections-tab-container .sections-tab table tr td {
+        padding-left: 1em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        width: 100%;
+        font-size: 120%;
+        color: #767676; }
+      #addressbook-component .sections-tab-container .sections-tab table tr td:hover {
+        background-color: #e8e8e8;
+        cursor: pointer; }
+      #addressbook-component .sections-tab-container .sections-tab table tr.selected td {
+        font-weight: bold;
+        color: #767676; }
+    #addressbook-component .sections-tab-container .footer {
+      background-color: #F4F4F4;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 0em;
+      margin-bottom: 0em;
+      color: #767676;
+      font-weight: bolder;
+      border-bottom-left-radius: 1em;
+      border-bottom-right-radius: 1em;
+      text-align: center; }
+      #addressbook-component .sections-tab-container .footer i {
+        font-size: 24px;
+        margin-top: 8px;
+        color: #767676; }
+  #addressbook-component .form-tab-container {
+    height: calc(100vh - 130px - 10px);
+    background-color: white;
+    border-radius: 0.5em;
+    border: 1px solid gainsboro;
+    margin: 0em; }
+    #addressbook-component .form-tab-container .header {
+      background-color: #F4F4F4;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 0em;
+      margin-bottom: 0em;
+      color: #767676;
+      font-weight: bolder;
+      border-top-left-radius: 1em;
+      border-top-right-radius: 1em;
+      text-align: center; }
+      #addressbook-component .form-tab-container .header .col {
+        max-height: 40px; }
+      #addressbook-component .form-tab-container .header .back-button i {
+        font-size: 24px;
+        margin-top: 8px; }
+      #addressbook-component .form-tab-container .header #delete-contact i {
+        font-size: 24px;
+        margin-top: 8px;
+        color: #767676; }
+    #addressbook-component .form-tab-container .form-tab {
+      height: calc(100vh - 170px - 10px); }
+      #addressbook-component .form-tab-container .form-tab .iframebox {
+        position: relative;
+        height: calc(100vh - 170px - 10px);
+        overflow: hidden; }
+        #addressbook-component .form-tab-container .form-tab .iframebox iframe {
+          border-radius: 1em; }
+    #addressbook-component .form-tab-container .footer {
+      background-color: #F4F4F4;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 0em;
+      margin-bottom: 0em;
+      color: #767676;
+      font-weight: bolder;
+      border-bottom-left-radius: 1em;
+      border-bottom-right-radius: 1em;
+      text-align: center; }
+
+.popupmenu {
+  overflow-y: hidden; }
+
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+  position: relative;
+  opacity: inherit;
+  pointer-events: all; }
+
+[type="radio"]:not(:checked), [type="radio"]:checked {
+  position: relative;
+  opacity: inherit;
+  pointer-events: all; }
+
+.boxpagenav {
+  position: relative;
+  top: auto;
+  margin-bottom: 10px; }
+
+/*# sourceMappingURL=addressbook.css.map */

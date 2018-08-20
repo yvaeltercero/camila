@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+#header-component.mobile-header {
+  height: 60px; }
+
+#header-component {
+  font-family: "Roboto", sans-serif !important;
+  width: 100%;
+  height: 80px; }
+  #header-component .unreadcount {
+    float: right;
+    color: #204c6f;
+    height: 25px;
+    line-height: 25px;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    background-color: white;
+    border-radius: 0.5em; }
+  #header-component .sidenav-footer {
+    background-color: #153147; }
+  #header-component #topline {
+    height: 20px;
+    line-height: 20px;
+    font-size: 1.2em; }
+    #header-component #topline a {
+      color: white; }
+    #header-component #topline a:visited {
+      color: white; }
+  #header-component nav {
+    height: 60px;
+    line-height: 60px; }
+    #header-component nav ul a {
+      font-size: 16px; }
+    #header-component nav #brand-image {
+      height: 54px;
+      padding-left: 0.5em; }
+    #header-component nav #navigation-options {
+      max-height: 60px; }
+      #header-component nav #navigation-options .header-button {
+        background-color: #204c6f; }
+      #header-component nav #navigation-options .header-button.selected {
+        background-color: #1a3e5b; }
+  #header-component .nav-wrapper a {
+    color: white; }
+  #header-component .nav-wrapper a:visited {
+    color: white; }
+  #header-component .side-nav {
+    background-color: #204c6f; }
+    #header-component .side-nav a {
+      color: white; }
+    #header-component .side-nav a:visited {
+      color: white; }
+    #header-component .side-nav .button-selected {
+      background-color: #183953; }
+    #header-component .side-nav #mailboxlist li.mailbox {
+      background-color: #204c6f;
+      border-bottom: 0em; }
+    #header-component .side-nav #mailboxlist li.mailbox a {
+      background-color: #204c6f;
+      background-image: none; }
+    #header-component .side-nav #mailboxlist li.mailbox a:visited {
+      background-color: #204c6f; }
+
+/*# sourceMappingURL=header.css.map */

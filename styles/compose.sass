@@ -1,0 +1,280 @@
+$back-color: #F5F5F5
+$font-color: darken($back-color, 50%)
+$toolbar-height: 50px
+$folder-list-text-color: #888888
+$forder-list-border-color: #bababa
+$folder-list-selected-color: #c7c5c5
+$folder-list-back-color: #cbcbcb
+$topline-height: 20px
+$nav-height: 60px
+$header-height: $topline-height + $nav-height
+$toolbar-height: 50px
+$header-toolbar-height: $header-height + $toolbar-height
+$title-height: 40px
+$header-toolbar-title-height: $header-toolbar-height + $title-height
+$widescreen-height: calc(100vh - #{$header-toolbar-height} - 10px)
+$content-height: calc(100vh - #{$header-toolbar-title-height} - 10px)
+$compose-headers-height: 190px
+$header-toolbar-compose-height: $header-toolbar-height + $compose-headers-height
+$compose-message-height: calc(100vh - #{$header-toolbar-compose-height} - 10px)
+
+@import url('https://fonts.googleapis.com/css?family=Roboto')
+
+html, body
+  background-color: $back-color
+  color: $font-color
+  width: 100%
+  height: 100vh
+  font-family: 'Roboto', sans-serif
+
+#compose-component
+  background-color: $back-color
+  height: calc(100vh - #{$header-toolbar-height})
+
+  .droptarget
+    background-image: url(../../images/filedrop.png?v=ba79.421)
+    background-position: center bottom
+    background-repeat: no-repeat
+
+  .toolbar
+    height: $toolbar-height
+    line-height: $toolbar-height
+    margin: 0em
+
+    #messagetoolbar
+      height: $toolbar-height
+      line-height: $toolbar-height
+
+      #compose-toolbar
+        display: inline
+
+      .toolbar-button
+        padding-left: 0.7em
+        padding-right: 0.7em
+        font-size: 1em
+        height: $toolbar-height * 0.60
+        line-height: $toolbar-height * 0.60
+        background-color: white
+        color: lighten($font-color, 10%)
+        border: 1px solid darken($back-color, 20%)
+        border-radius: 0.5em
+        text-align: center
+
+        i.left
+          font-size: $toolbar-height * 0.45
+          margin-right: 0.2em
+
+        i.right
+          font-size: $toolbar-height * 0.45
+          margin-left: 0em
+          cursor: pointer
+
+        span
+          font-weight: bolder
+
+      .dropdown
+        font-size: 0em
+        width: 0em
+
+  .widescreen
+    height: $widescreen-height
+    margin: 0em
+
+    #contacts-sidebar
+      background-color: white
+      height: $widescreen-height
+      border-radius: 1em
+      border: 1px solid darken($back-color, 10%)
+
+      #sidebar-content
+        height: $content-height
+
+        .contacts-header
+          padding-left: 1em
+          font-size: 1em
+          font-weight: bold
+          height: $title-height
+          line-height: $title-height
+          background-color: darken($back-color, 10%)
+          border-top-left-radius: 0.5em
+          border-top-right-radius: 0.5em
+
+        #directorylist
+          margin: 0em
+
+        .search-component
+          padding: 1em 1em 0em 1em
+
+          #contactsearchbox
+            height: 20px
+            border: 1px solid $back-color
+            border-radius: 0.5em
+            padding-left: 1em
+            font-size: 1em
+            width: 95%
+
+        #contacts-table
+          td
+            padding: 0.5em 1em
+
+            a
+              font-size: 1em
+              color: $font-color
+
+        #directorylist
+          padding: 0em 1em 0em 1em
+          .addressbook
+            a
+              color: $font-color
+              font-size: 1em
+              font-weight: bold
+
+      #sidebar-footer
+        height: $title-height
+        line-height: $title-height
+        background-color: darken($back-color, 5%)
+        border-bottom-left-radius: 1em
+        border-bottom-right-radius: 1em
+
+        .col
+          a
+            display: block
+            color: $font-color
+            font-weight: bold
+
+    #message-compose
+      background-color: white
+      position: relative
+      height: $widescreen-height
+      border-radius: 1em
+      border: 1px solid darken($back-color, 10%)
+
+      #compose-content
+        overflow-y: auto !important
+        height: $widescreen-height
+
+        #composeheaders
+          #composeoptions
+            background-color: darken($back-color, 20%)
+            height: 30px
+            line-height: 30px
+            padding-left: 1em
+
+            .compose-option
+              label
+                color: $font-color
+                margin-left: 1em
+
+                select
+                  background-color: white
+                  height: 20px
+                  width: auto
+                  display: inline
+                  font-size: 1em
+                  padding: 0em
+                  margin-left: 1em
+                  border: 1px solid darken($back-color, 20%)
+                  border-radius: 0.5em
+
+                input[type="checkbox"]
+                  position: relative
+                  opacity: 1
+                  pointer-events: all
+
+          .headers-table
+            background-color: darken($back-color, 10%)
+            border-top-left-radius: 1em
+            border-top-right-radius: 1em
+
+            tr
+              td
+                padding: 0.5em 3em 0em 3em
+              td.title
+                label
+                  font-size: 1em
+                  font-weight: bold
+                  color: darken($back-color, 40%)
+
+            #compose-subject
+              margin-top: 1em
+              height: 2em
+              background-color: white
+              border: 1px solid darken($back-color, 20%)
+              border-radius: 1em
+              padding-left: 1em
+              font-size: 1em
+              width: 99%
+
+            #_to
+              height: 3em
+              background-color: white
+              border: 1px solid darken($back-color, 20%)
+              border-radius: 0.5em
+              padding-left: 1em
+
+            #_from
+              height: 2.5em
+              width: auto
+              display: inline
+              font-size: 1em
+              padding: 0em 1em 0em 1em
+              border: 1px solid darken($back-color, 20%)
+              border-radius: 0.5em
+
+            #_cc
+              height: 3em
+              background-color: white
+              border: 1px solid darken($back-color, 20%)
+              border-radius: 0.5em
+              padding-left: 1em
+
+            #_bcc
+              height: 3em
+              background-color: white
+              border: 1px solid darken($back-color, 20%)
+              border-radius: 0.5em
+              padding-left: 1em
+
+            #_replyto
+              height: 2em
+              background-color: white
+              border: 1px solid darken($back-color, 20%)
+              border-radius: 0.5em
+              padding-left: 1em
+              font-size: 1em
+              width: 99%
+
+            #_followupto
+              height: 2em
+              background-color: white
+              border: 1px solid darken($back-color, 20%)
+              border-radius: 0.5em
+              padding-left: 1em
+              font-size: 1em
+              width: 99%
+
+            #formlinks-container
+              border-bottom: 1px solid darken($back-color, 20%)
+
+              .formlinks
+                float: right
+
+                a
+                  color: darken($font-color, 15%)
+
+            a.iconlink
+              color: darken($font-color, 15%)
+
+        #composeview-bottom
+          #body-container
+            margin: 0em
+            padding: 0em
+
+            #composebodycontainer
+              height: calc(#{$compose-message-height} - 20px)
+
+          #composebody
+            height: calc(#{$compose-message-height} - 20px) !important
+
+          #compose-attachments
+            height: calc(#{$compose-message-height} - 20px)

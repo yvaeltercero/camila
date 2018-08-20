@@ -1,0 +1,244 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+<head>
+<title><roundcube:object name="pagetitle" /></title>
+<roundcube:include file="/includes/links.html" />
+<link rel="stylesheet" type="text/css" href="/thirdparty/materialize/css/materialize.css"/>
+<link rel="stylesheet" type="text/css" href="/mail.css"/>
+<link rel="stylesheet" type="text/css" href="/styles/dist/mail.css" />
+</head>
+<body class="noscroll">
+<roundcube:include file="/includes/header.html" />
+
+<div id="mail-component">
+
+	<!-- toolbar -->
+	<div class="row toolbar">
+		<div class="col xs12 s12 m12 l9 xl9">
+			<h2 id="aria-label-toolbar" class="voice"><roundcube:label name="arialabeltoolbar" /></h2>
+			<div id="messagetoolbar" class="toolbar" role="toolbar" aria-labelledby="aria-label-toolbar">
+				<roundcube:button command="checkmail" type="link" class="btn toolbar-button z-depth-0 checkmail" label="refresh" title="checkmail" />
+				<roundcube:include file="/includes/mailtoolbar.html" />
+			</div>
+		</div>
+		<div class="col l3 xl3 hide-on-med-and-down">
+			<div class="row" id="search-box-container">
+				<div class="col l5 xl5 right-align" id="buttons-container">
+					<div id="searchfilter">
+					  <label for="messagessearchfilter" class="voice"><roundcube:label name="arialabelmessagessearchfilter" /></label>
+					  <roundcube:object name="searchfilter" class="searchfilter decorated" id="messagessearchfilter" aria-controls="messagelist" />
+					</div>
+					<div id="quicksearchcombo">
+						<h2 id="aria-label-searchform" class="voice"><roundcube:label name="arialabelmailsearchform" /></h2>
+					  <label for="quicksearchbox" class="voice"><roundcube:label name="arialabelmailquicksearchbox" /></label>
+					  <roundcube:button command="menu-open" prop="searchmenu" type="link" class="btn toolbar-button z-depth-0" id="searchmenulink" title="searchmod" label="options" aria-haspopup="true" aria-expanded="false" aria-owns="searchmenu-menu" />
+					</div>
+				</div>
+				<div class="col l5 xl5" id="form-container">
+					<roundcube:object name="searchform" id="quicksearchbox" />
+				</div>
+				<div class="col l2 xl2" id="reset-container">
+					<roundcube:button command="reset-search" id="searchreset" type="link" class="btn toolbar-button z-depth-0" title="resetsearch" label="resetsearch" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- widescreen layout -->
+	<div class="row widescreen">
+		<!-- sidebar column -->
+		<div id="sidebar-container" class="col l2 xl2 hide-on-med-and-down">
+			<div id="sidebar">
+				<div id="sidebar-header">
+					<div class="col l4 xl4">
+						<span class="header">Casilleros</h1>
+					</div>
+					<div class="col l8 xl8 right-align">
+						<div class="col l6 xl6 center-align">
+							<roundcube:if condition="env:quota" />
+								<span class="voice"><roundcube:label name="quota"></span>
+								<roundcube:object name="quotaDisplay" id="quotadisplay" class="countdisplay" display="text" />
+							<roundcube:endif />
+						</div>
+						<div class="col l6 xl6 right-align" id="mailboxmenu-container">
+							<roundcube:button name="mailboxmenulink" id="mailboxmenulink" type="link" title="folderactions" class="listbutton groupactions" onclick="UI.toggle_popup('mailboxmenu',event);return false" innerClass="inner" content="&#9881;" aria-haspopup="true" aria-expanded="false" aria-owns="mailboxoptionsmenu" />
+						</div>
+					</div>
+				</div>
+				<div id="mailboxcontainer" role="navigation" aria-labelledby="aria-label-folderlist">
+					<h2 id="aria-label-folderlist" class="voice"><roundcube:label name="arialabelfolderlist" /></h2>
+
+					<div id="folderlist-content">
+						<roundcube:object name="mailboxlist" id="mailboxlist" folder_filter="mail" unreadwrap="%s"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- mail list column -->
+		<div id="mail-list-container" class="col xs12 s12 m12 l5 xl5">
+			<div id="mail-list">
+				<div class="top-header">
+					<div class="row">
+						<div class="col xs6 s6 m6 l4 xl4 left-align" id="mail-list-options">
+							<a href="#select" id="listselectmenulink" class="btn header-button z-depth-0" onclick="UI.toggle_popup('listselectmenu', event);return false" aria-haspopup="true" aria-expanded="false" aria-owns="listselectmenu-menu"><span class="handle"><roundcube:label name="select" /></span></a>
+							<div id="listcontrols">
+								<roundcube:button href="#list" command="set-listmode" prop="list" class="btn header-button z-depth-0" id="maillistmode" title="list" content="List" />
+								<roundcube:button href="#threads" command="set-listmode" prop="threads" class="btn header-button z-depth-0" id="mailthreadmode" title="threads" content="Threads" />
+							</div>
+							<div class="hide-on-med-and-down" style="display: inline">
+								<roundcube:object name="listmenulink" optionsmenuIcon="true" class="btn header-button z-depth-0" id="listmenulink"/>
+							</div>
+						</div>
+						<div class="col l4 xl4 hide-on-med-and-down center-align">
+							<roundcube:object name="messageCountDisplay" class="countdisplay" aria-live="polite" aria-relevant="text" />
+						</div>
+						<div class="col xs6 s6 m6 l4 xl4 right-align" id="navigation-options">
+							<div id="messagelistheader"></div>
+							<div id="countcontrols" class="pagenavigation">
+								<span id="pagenavigation-buttons">
+									<roundcube:button command="firstpage" type="link" class="navbutton firstpage" classAct="navbutton firstpage" classSel="navbutton firstpage pressed" title="firstpage" label="first" />
+									<roundcube:button command="previouspage" type="link" class="navbutton prevpage disabled" classAct="navbutton prevpage" classSel="navbutton prevpage pressed" title="previouspage" label="previous" />
+									<input id="pagejumper" class="pagejumper" type="text" size="3" disabled title="<roundcube:label name="currpage" />" />
+									<roundcube:button command="nextpage" type="link" class="navbutton nextpage disabled" classAct="navbutton nextpage" classSel="navbutton nextpage pressed" title="nextpage" label="next" />
+									<roundcube:button command="lastpage" type="link" class="navbutton lastpage disabled" classAct="navbutton lastpage" classSel="navbutton lastpage pressed" title="lastpage" label="last" />
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="messagelistcontainer">
+					<h2 id="aria-label-messagelist" class="voice"><roundcube:label name="arialabelmessagelist" /></h2>
+					<roundcube:object name="messages" id="messagelist" aria-labelledby="aria-label-messagelist" />
+				</div>
+			</div>
+		</div>
+		<!-- message preview column -->
+		<div id="message-preview-container" class="col l5 xl5 hide-on-med-and-down">
+			<div id="message-preview">
+				<roundcube:object name="messagecontentframe" id="messagecontframe" frameborder="0" src="/watermark.html" title="arialabelmailpreviewframe" />
+			</div>
+		</div>
+	</div>
+
+	<roundcube:include file="/includes/listoptions.html" />
+	<roundcube:include file="/includes/mailboxmenu.html" />
+	<roundcube:include file="/includes/listselectmenu.html" />
+	<roundcube:include file="/includes/threadselectmenu.html" />
+	<roundcube:include file="/includes/searchmenu.html" />
+	<roundcube:include file="/includes/footer.html" />
+	<roundcube:object name="messageimportform" id="uploadform" mode="smart" />
+<script>
+	const mq = window.matchMedia("(max-width: 992px)");
+
+	mq.addListener(handleMediaQuery);
+
+	function handleMediaQuery(mediaQuery) {
+		if (mediaQuery.matches) {
+			$('#header-component').addClass('mobile-header');
+			$('#messagecontframe').attr('id', 'messagecontframe-disabled');
+		} else {
+			$('#header-component').removeClass('mobile-header');
+			$('#messagecontframe-disabled').attr('id', 'messagecontframe');
+		}
+	}
+	$(document).ready(function() {
+		handleMediaQuery(mq);
+	});
+</script>
+<script>
+	$(document).ready(function() {
+		String.prototype.format = function () {
+		  var i = 0, args = arguments;
+		  return this.replace(/{}/g, function () {
+		    return typeof args[i] != 'undefined' ? args[i++] : '';
+		  });
+		};
+		$('#listmenulink').html('<i class="material-icons">view_quilt</i>');
+		$('#mailboxmenulink').html('<i class="material-icons">settings</i>');
+		$('#maillistmode').html('<i class="tiny material-icons">list</i>');
+		$('#mailthreadmode').html('<i class="tiny material-icons">message</i>');
+		$('#searchmenulink').html('<i class="tiny material-icons">search</i>');
+		$('#searchreset').html('<i class="tiny material-icons">backspace</i>');
+		$('.treetoggle').remove()
+		$('#searchmenu > .buttons').remove();
+		$('#listselectmenulink > .handle').html('<i class="tiny material-icons left">check_circle</i><i class="tiny material-icons right" id="{}-clicker">arrow_drop_down</i>');
+		$('#listmenulink').addClass('btn header-button z-depth-0');
+		$('.threads > .threads > div.collapsed').html('<i class="tiny material-icons">arrow_drop_down</i>');
+		var buttons = [
+			// class, icon
+			['.checkmail', 'refresh'],
+			['.compose', 'email'],
+			['.reply', 'reply'],
+			['.replyall', 'reply_all', 'replyallmenulink'],
+			['.forward', 'forward', 'forwardmenulink'],
+			['.delete', 'delete'],
+			['.move', 'move_to_inbox'],
+			['.print', 'print'],
+			['.mark', 'markunread_mailbox'],
+			['.more', 'more']
+		];
+		$('.toolbar').find('.checkmail').html('<i class="material-icons left">{}</i><span class="hide-on-med-and-down">{}</span>'.format('refresh', $('.toolbar').find('.checkmail').html()));
+		buttons.forEach(function(tuple) {
+			var klass = tuple[0];
+			var icon = tuple[1];
+			var link = tuple[2];
+
+			$('#mailtoolbar').find(klass).html('<i class="material-icons left">{}</i><span class="hide-on-med-and-down">{}</span>'.format(icon, $('#mailtoolbar').find(klass).html()));
+
+			if (link !== undefined) {
+				$('#mailtoolbar').find(klass).html($(tuple[0]).html() + '<i class="material-icons right" id="{}-clicker">arrow_drop_down</i>'.format(link));
+				$('#{}-clicker'.format(link)).on('click', function(e) {
+					e.stopPropagation();
+					$('#{}'.format(link)).click();
+				})
+			}
+		});
+	});
+</script>
+<script>
+var navbuttons = [
+	// class, icon
+	['.firstpage', 'skip_previous'],
+	['.prevpage', 'fast_rewind'],
+	['.nextpage', 'fast_forward'],
+	['.lastpage', 'skip_next']
+];
+navbuttons.forEach(function(tuple) {
+	var klass = tuple[0];
+	var icon = tuple[1];
+
+	$('#pagenavigation-buttons').find(klass).html('<i class="tiny material-icons">{}</i>'.format(icon));
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#listcontrols').find('a.selected').hide();
+		$('#listcontrols').find('a').on('click', function(e) {
+			$('#listcontrols').find('a').show();
+			$('#listcontrols').find('a.selected').hide();
+		});
+	});
+</script>
+<script defer>
+	function toggleBodyWidth() {
+		var rosterClass = $('#jsxc_roster').attr('class');
+		if (rosterClass === 'jsxc_state_shown') {
+			$('body').css('width', 'calc(100vw - 200px)');
+		} else {
+			$('body').css('width', '100%');
+		}
+	}
+	$(document).ready(function() {
+		$(document).on('ready.roster.jsxc', function (event) {
+	    $('#jsxc_toggleRoster').on('click', toggleBodyWidth);
+			toggleBodyWidth();
+		});
+	});
+</script>
+<script>
+    $('#show-chat').on('click', function () {
+      $('#jsxc_toggleRoster').click();
+    });
+  </script>
+</body>
+</html>

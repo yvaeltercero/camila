@@ -1,0 +1,355 @@
+$back-color: #F5F5F5
+$font-color: darken($back-color, 50%)
+$header-color: #F4F4F4
+$topline-height: 20px
+$nav-height: 60px
+$header-height: $topline-height + $nav-height
+$widescreen-height: calc(100vh - #{$header-height} - 20px)
+$toolbar-height: 50px
+$header-toolbar-height: $header-height + $toolbar-height
+$title-height: 40px
+$header-toolbar-title-height: $header-toolbar-height + $title-height
+$widescreen-height: calc(100vh - #{$header-toolbar-height} - 10px)
+$content-height: calc(100vh - #{$header-toolbar-title-height} - 10px)
+$footer-height: 40px
+
+@import url('https://fonts.googleapis.com/css?family=Roboto')
+
+html, body
+  width: 100%
+  height: 100vh
+  background-color: $back-color
+  font-family: 'Roboto', sans-serif
+
+  ul
+    -webkit-margin-before: 0em
+    -webkit-margin-after: 0em
+
+#addressbook-component
+  background-color: $back-color
+  width: 100%
+  height: calc(100vh - #{$header-toolbar-height})
+
+  .toolbar
+    height: $toolbar-height
+    line-height: $toolbar-height
+    margin: 0px
+
+    #search-box-container
+      height: $toolbar-height
+      line-height: $toolbar-height
+      width: 100%
+      margin: 0em
+      padding: 0em
+
+      #buttons-container
+        height: $toolbar-height
+        line-height: $toolbar-height
+        padding-right: 0.2em
+        padding-left: 0.2em
+
+        #searchfilter
+          width: 75%
+          display: inline
+          select
+            display: inline
+            width: 60%
+            height: $toolbar-height * 0.60
+            line-height: $toolbar-height * 0.60
+            font-size: 1em
+            background-color: white
+            border: 1px solid darken($back-color, 10%)
+            border-radius: 0.5em
+
+        #quicksearchcombo
+          width: 25%
+          display: inline
+
+          .toolbar-button
+            padding-left: 0.7em
+            padding-right: 0.7em
+            font-size: 1em
+            height: $toolbar-height * 0.60
+            line-height: $toolbar-height * 0.60
+            background-color: white
+            color: lighten($font-color, 10%)
+            border: 1px solid darken($back-color, 20%)
+            border-radius: 0.5em
+            text-align: center
+
+      #form-container
+        padding-left: 0.2em
+        height: $toolbar-height
+        line-height: $toolbar-height
+        form
+          height: $toolbar-height * 0.60
+          line-height: $toolbar-height * 0.60
+          input
+            width: 100%
+            margin-top: $toolbar-height * 0.2
+            height: $toolbar-height * 0.60
+            line-height: $toolbar-height * 0.60
+            background-color: white
+            border: 1px solid darken($back-color, 10%)
+            border-radius: 0.5em
+            padding-left: 1em
+
+      #reset-container
+        display: inline
+        .toolbar-button
+          padding-left: 0.2em
+          padding-right: 0.2em
+          font-size: 1em
+          height: $toolbar-height * 0.60
+          line-height: $toolbar-height * 0.60
+          background-color: white
+          color: lighten($font-color, 10%)
+          border: 1px solid darken($back-color, 20%)
+          border-radius: 0.5em
+          text-align: center
+
+    #addressbooktoolbar
+      height: $toolbar-height
+      line-height: $toolbar-height
+
+      #mailtoolbar
+        display: inline
+
+      .toolbar-button
+        padding-left: 0.7em
+        padding-right: 0.7em
+        font-size: 1em
+        height: $toolbar-height * 0.60
+        line-height: $toolbar-height * 0.60
+        background-color: white
+        color: lighten($font-color, 10%)
+        border: 1px solid darken($back-color, 20%)
+        border-radius: 0.5em
+        text-align: center
+
+        i.left
+          font-size: $toolbar-height * 0.45
+          margin-right: 0.2em
+
+        i.right
+          font-size: $toolbar-height * 0.45
+          margin-left: 0em
+          cursor: pointer
+
+        span
+          font-weight: bolder
+
+      .dropdown
+        font-size: 0em
+        width: 0em
+
+  .settings-tab-container
+    height: $widescreen-height
+    background-color: white
+    border-radius: 0.5em
+    border: 1px solid darken($back-color, 10%)
+
+    .col
+      height: $title-height
+      max-height: $title-height
+
+    .header
+      background-color: $header-color
+      height: $title-height
+      line-height: $title-height
+      margin-top: 0em
+      margin-bottom: 0em
+      color: $font-color
+      font-weight: bolder
+      text-align: center
+
+    .settings-tab
+      height: calc(#{$content-height} - #{$footer-height})
+      -webkit-margin-before: 0em
+      -webkit-margin-after: 0em
+      li
+        width: 100%
+
+        a
+          padding-left: 1em
+          padding-top: 1em
+          padding-bottom: 1em
+          font-size: 120%
+          color: $font-color
+          display: block
+
+        a:visited
+          color: $font-color
+          display: block
+
+      li:hover
+        background-color: darken($back-color, 5%)
+        cursor: pointer
+
+      li.selected
+        a
+          font-weight: bold
+          color: $font-color
+
+    .footer
+      background-color: $header-color
+      height: $title-height
+      line-height: $title-height
+      margin-top: 0em
+      margin-bottom: 0em
+      color: $font-color
+      font-weight: bolder
+      border-bottom-left-radius: 1em
+      border-bottom-right-radius: 1em
+      text-align: center
+
+      i
+        font-size: $title-height * 0.6
+        margin-top: $title-height * 0.2
+        color: $font-color
+
+
+  .sections-tab-container
+      height: $widescreen-height
+      background-color: white
+      border-radius: 0.5em
+      border: 1px solid darken($back-color, 10%)
+      margin: 0em
+
+      .col
+        height: $title-height
+
+      .header
+        background-color: $header-color
+        height: $title-height
+        line-height: $title-height
+        margin-top: 0em
+        margin-bottom: 0em
+        color: $font-color
+        font-weight: bolder
+        text-align: center
+
+        #pagenavigation-buttons
+          height: 20px
+          .navbutton
+            i
+              color: $font-color
+          .navbutton.disabled
+            i
+              color: lighten($font-color, 20%)
+
+        .back-button
+          i
+            font-size: $title-height * 0.6
+            margin-top: $title-height * 0.2
+
+      .sections-tab
+        height: calc(#{$content-height} - #{$footer-height})
+        overflow: auto
+        table
+          tr
+            td
+              padding-left: 1em
+              padding-top: 1em
+              padding-bottom: 1em
+              width: 100%
+              font-size: 120%
+              color: $font-color
+            td:hover
+              background-color: darken($back-color, 5%)
+              cursor: pointer
+          tr.selected
+            td
+              font-weight: bold
+              color: $font-color
+
+      .footer
+        background-color: $header-color
+        height: $title-height
+        line-height: $title-height
+        margin-top: 0em
+        margin-bottom: 0em
+        color: $font-color
+        font-weight: bolder
+        border-bottom-left-radius: 1em
+        border-bottom-right-radius: 1em
+        text-align: center
+
+        i
+          font-size: $title-height * 0.6
+          margin-top: $title-height * 0.2
+          color: $font-color
+
+  .form-tab-container
+    height: $widescreen-height
+    background-color: white
+    border-radius: 0.5em
+    border: 1px solid darken($back-color, 10%)
+    margin: 0em
+
+    .header
+      background-color: $header-color
+      height: $title-height
+      line-height: $title-height
+      margin-top: 0em
+      margin-bottom: 0em
+      color: $font-color
+      font-weight: bolder
+      border-top-left-radius: 1em
+      border-top-right-radius: 1em
+      text-align: center
+
+      .col
+        max-height: $title-height
+
+      .back-button
+        i
+          font-size: $title-height * 0.6
+          margin-top: $title-height * 0.2
+
+      #delete-contact
+        i
+          font-size: $title-height * 0.6
+          margin-top: $title-height * 0.2
+          color: $font-color
+
+    .form-tab
+      height: $content-height
+
+      .iframebox
+        position: relative
+        height: $content-height
+        overflow: hidden
+
+        iframe
+          border-radius: 1em
+
+    .footer
+      background-color: $header-color
+      height: $title-height
+      line-height: $title-height
+      margin-top: 0em
+      margin-bottom: 0em
+      color: $font-color
+      font-weight: bolder
+      border-bottom-left-radius: 1em
+      border-bottom-right-radius: 1em
+      text-align: center
+
+.popupmenu
+  overflow-y: hidden
+
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked
+  position: relative
+  opacity: inherit
+  pointer-events: all
+
+[type="radio"]:not(:checked), [type="radio"]:checked
+  position: relative
+  opacity: inherit
+  pointer-events: all
+
+.boxpagenav
+  position: relative
+  top: auto
+  margin-bottom: 10px

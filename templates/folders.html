@@ -1,0 +1,101 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+
+<head>
+	<title>
+		<roundcube:object name="pagetitle" />
+	</title>
+	<roundcube:include file="/includes/links.html" />
+	<link rel="stylesheet" type="text/css" href="/styles/dist/folders.css" />
+	<link rel="stylesheet" type="text/css" href="/thirdparty/materialize/css/materialize.css" />
+</head>
+
+<body class="noscroll">
+	<roundcube:include file="/includes/header.html" />
+
+	<div id="folders-component">
+		<div class="row">
+			<div class="col s12 m12 l2 xl2 hide-on-med-and-down" id="settings-tab">
+				<div class="settings-tab-container">
+					<div class="header">Configuraciones</div>
+					<roundcube:include file="/includes/settingstabs.html" />
+				</div>
+			</div>
+			<div class="col s12 m12 l3 xl3" id="sections-tab">
+				<div class="sections-tab-container">
+					<div class="header">
+						<div class="col xs2 s2 m2 l2 xl2">
+							<div class="hide-on-large-only">
+								<span class="back-button" id="sections-back"><i class="material-icons left">arrow_back</i></span>
+							</div>
+						</div>
+						<div class="col xs8 s8 m8 l8 xl8">
+							<div id="search-form" role="search" aria-labelledby="aria-label-foldersearchform" style="display: none">
+								<h3 id="aria-label-foldersearchform" class="voice"><roundcube:label name="arialabelfoldersearchform" /></h3>
+								<label for="foldersearch" class="voice"><roundcube:label name="arialabelsearchterms" /></label>
+								<input type="text" name="q" id="foldersearch" placeholder="<roundcube:label name='findfolders' />" />
+							</div>
+						</div>
+						<div class="col xs2 s2 m2 l2 xl2">
+							<span id="show-search-form"><i class="material-icons" id="show-search-form">search</i></span>
+						</div>
+					</div>
+					<div class="sections-tab">
+						<roundcube:object name="foldersubscription" form="subscriptionform" id="subscription-table" />
+					</div>
+					<div class="footer">
+						<div class="col s4 m4 l4 xl4">
+							<roundcube:button command="create-folder" type="link" title="createfolder" id="add-folder" label="createfolder" />
+						</div>
+						<div class="col s4 m4 l4 xl4">
+							<roundcube:if condition="env:quota" />
+							<span class="voice"><roundcube:label name="quota"></span>
+							<roundcube:object name="quotaDisplay" id="quotadisplay" class="countdisplay" display="text" />
+							<roundcube:endif />
+						</div>
+						<div class="col s4 m4 l4 xl4">
+							<roundcube:button name="mailboxmenulink" id="mailboxmenulink" type="link" title="folderactions" class="listbutton groupactions" onclick="return UI.toggle_popup('mailboxmenu',event)" innerClass="inner" content="&#9881;" aria-haspopup="true" aria-expanded="false"
+							  aria-owns="mailboxoptionsmenu" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col s12 m12 l7 xl7 hide-on-med-and-down" id="form-tab">
+				<div class="form-tab-container">
+					<div class="header">
+						<div class="col xs2 s2 m2 l2 xl2">
+							<div class="hide-on-large-only">
+								<span class="back-button" id="form-back"><i class="material-icons left">arrow_back</i></span><br />
+							</div>
+						</div>
+						<div class="col xs8 s8 m8 l8 xl8">
+							Carpeta
+						</div>
+						<div class="col xs2 s2 m2 l2 xl2"></div>
+					</div>
+					<div class="form-tab">
+						<div class="iframebox">
+							<roundcube:object name="prefsframe" id="preferences-frame" style="width:100%; height:100%" frameborder="0" src="/watermark.html" title="arialabelpreferencesform" scrolling="yes" />
+						</div>
+					</div>
+					<div class="footer">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="mailboxmenu" class="popupmenu" aria-hidden="true">
+		<h3 id="aria-label-mailboxmenu" class="voice"><roundcube:label name="arialabelmailboxmenu" /></h3>
+		<ul class="toolbarmenu" id="mailboxoptionsmenu" role="menu" aria-labelledby="aria-label-mailboxmenu">
+			<roundcube:button command="delete-folder" type="link-menuitem" label="delete" classAct="active" />
+			<roundcube:button command="purge" type="link-menuitem" label="empty" classAct="active" />
+			<roundcube:container name="mailboxoptions" id="mailboxoptionsmenu" />
+		</ul>
+	</div>
+	<roundcube:include file="/includes/footer.html" />
+</body>
+
+<script type="text/javascript" src="/scripts/folders.js" defer></script>
+
+</html>

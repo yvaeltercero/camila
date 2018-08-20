@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+html, body {
+  background-color: #F5F5F5;
+  color: #767676;
+  width: 100%;
+  height: 100vh;
+  font-family: "Roboto", sans-serif; }
+
+#compose-component {
+  background-color: #F5F5F5;
+  height: calc(100vh - 130px); }
+  #compose-component .droptarget {
+    background-image: url(../../images/filedrop.png?v=ba79.421);
+    background-position: center bottom;
+    background-repeat: no-repeat; }
+  #compose-component .toolbar {
+    height: 50px;
+    line-height: 50px;
+    margin: 0em; }
+    #compose-component .toolbar #messagetoolbar {
+      height: 50px;
+      line-height: 50px; }
+      #compose-component .toolbar #messagetoolbar #compose-toolbar {
+        display: inline; }
+      #compose-component .toolbar #messagetoolbar .toolbar-button {
+        padding-left: 0.7em;
+        padding-right: 0.7em;
+        font-size: 1em;
+        height: 30px;
+        line-height: 30px;
+        background-color: white;
+        color: #8f8f8f;
+        border: 1px solid #c2c2c2;
+        border-radius: 0.5em;
+        text-align: center; }
+        #compose-component .toolbar #messagetoolbar .toolbar-button i.left {
+          font-size: 22.5px;
+          margin-right: 0.2em; }
+        #compose-component .toolbar #messagetoolbar .toolbar-button i.right {
+          font-size: 22.5px;
+          margin-left: 0em;
+          cursor: pointer; }
+        #compose-component .toolbar #messagetoolbar .toolbar-button span {
+          font-weight: bolder; }
+      #compose-component .toolbar #messagetoolbar .dropdown {
+        font-size: 0em;
+        width: 0em; }
+  #compose-component .widescreen {
+    height: calc(100vh - 130px - 10px);
+    margin: 0em; }
+    #compose-component .widescreen #contacts-sidebar {
+      background-color: white;
+      height: calc(100vh - 130px - 10px);
+      border-radius: 1em;
+      border: 1px solid gainsboro; }
+      #compose-component .widescreen #contacts-sidebar #sidebar-content {
+        height: calc(100vh - 170px - 10px); }
+        #compose-component .widescreen #contacts-sidebar #sidebar-content .contacts-header {
+          padding-left: 1em;
+          font-size: 1em;
+          font-weight: bold;
+          height: 40px;
+          line-height: 40px;
+          background-color: gainsboro;
+          border-top-left-radius: 0.5em;
+          border-top-right-radius: 0.5em; }
+        #compose-component .widescreen #contacts-sidebar #sidebar-content #directorylist {
+          margin: 0em; }
+        #compose-component .widescreen #contacts-sidebar #sidebar-content .search-component {
+          padding: 1em 1em 0em 1em; }
+          #compose-component .widescreen #contacts-sidebar #sidebar-content .search-component #contactsearchbox {
+            height: 20px;
+            border: 1px solid #F5F5F5;
+            border-radius: 0.5em;
+            padding-left: 1em;
+            font-size: 1em;
+            width: 95%; }
+        #compose-component .widescreen #contacts-sidebar #sidebar-content #contacts-table td {
+          padding: 0.5em 1em; }
+          #compose-component .widescreen #contacts-sidebar #sidebar-content #contacts-table td a {
+            font-size: 1em;
+            color: #767676; }
+        #compose-component .widescreen #contacts-sidebar #sidebar-content #directorylist {
+          padding: 0em 1em 0em 1em; }
+          #compose-component .widescreen #contacts-sidebar #sidebar-content #directorylist .addressbook a {
+            color: #767676;
+            font-size: 1em;
+            font-weight: bold; }
+      #compose-component .widescreen #contacts-sidebar #sidebar-footer {
+        height: 40px;
+        line-height: 40px;
+        background-color: #e8e8e8;
+        border-bottom-left-radius: 1em;
+        border-bottom-right-radius: 1em; }
+        #compose-component .widescreen #contacts-sidebar #sidebar-footer .col a {
+          display: block;
+          color: #767676;
+          font-weight: bold; }
+    #compose-component .widescreen #message-compose {
+      background-color: white;
+      position: relative;
+      height: calc(100vh - 130px - 10px);
+      border-radius: 1em;
+      border: 1px solid gainsboro; }
+      #compose-component .widescreen #message-compose #compose-content {
+        overflow-y: auto !important;
+        height: calc(100vh - 130px - 10px); }
+        #compose-component .widescreen #message-compose #compose-content #composeheaders #composeoptions {
+          background-color: #c2c2c2;
+          height: 30px;
+          line-height: 30px;
+          padding-left: 1em; }
+          #compose-component .widescreen #message-compose #compose-content #composeheaders #composeoptions .compose-option label {
+            color: #767676;
+            margin-left: 1em; }
+            #compose-component .widescreen #message-compose #compose-content #composeheaders #composeoptions .compose-option label select {
+              background-color: white;
+              height: 20px;
+              width: auto;
+              display: inline;
+              font-size: 1em;
+              padding: 0em;
+              margin-left: 1em;
+              border: 1px solid #c2c2c2;
+              border-radius: 0.5em; }
+            #compose-component .widescreen #message-compose #compose-content #composeheaders #composeoptions .compose-option label input[type="checkbox"] {
+              position: relative;
+              opacity: 1;
+              pointer-events: all; }
+        #compose-component .widescreen #message-compose #compose-content #composeheaders .headers-table {
+          background-color: gainsboro;
+          border-top-left-radius: 1em;
+          border-top-right-radius: 1em; }
+          #compose-component .widescreen #message-compose #compose-content #composeheaders .headers-table tr td {
+            padding: 0.5em 3em 0em 3em; }
+          #compose-component .widescreen #message-compose #compose-content #composeheaders .headers-table tr td.title label {
+            font-size: 1em;
+            font-weight: bold;
+            color: #8f8f8f; }
+          #compose-component .widescreen #message-compose #compose-content #composeheaders .headers-table #compose-subject {
+            margin-top: 1em;
+            height: 2em;
+            background-color: white;
+            border: 1px solid #c2c2c2;
+            border-radius: 1em;
+            padding-left: 1em;
+            font-size: 1em;
+            width: 99%; }
+          #compose-component .widescreen #message-compose #compose-content #composeheaders .headers-table #_to {
+            height: 3em;
+            background-color: white;
+            border: 1px solid #c2c2c2;
+            border-radius: 0.5em;
+            padding-left: 1em; }
+          #compose-component .widescreen #message-compose #compose-content #composeheaders .headers-table #_from {
+            height: 2.5em;
+            width: auto;
+            display: inline;
+            font-size: 1em;
+            padding: 0em 1em 0em 1em;
+            border: 1px solid #c2c2c2;
+            border-radius: 0.5em; }
+          #compose-component .widescreen #message-compose #compose-content #composeheaders .headers-table #_cc {
+            height: 3em;
+            background-color: white;
+            border: 1px solid #c2c2c2;
+            border-radius: 0.5em;
+            padding-left: 1em; }
+          #compose-component .widescreen #message-compose #compose-content #composeheaders .headers-table #_bcc {
+            height: 3em;
+            background-color: white;
+            border: 1px solid #c2c2c2;
+            border-radius: 0.5em;
+            padding-left: 1em; }
+          #compose-component .widescreen #message-compose #compose-content #composeheaders .headers-table #_replyto {
+            height: 2em;
+            background-color: white;
+            border: 1px solid #c2c2c2;
+            border-radius: 0.5em;
+            padding-left: 1em;
+            font-size: 1em;
+            width: 99%; }
+          #compose-component .widescreen #message-compose #compose-content #composeheaders .headers-table #_followupto {
+            height: 2em;
+            background-color: white;
+            border: 1px solid #c2c2c2;
+            border-radius: 0.5em;
+            padding-left: 1em;
+            font-size: 1em;
+            width: 99%; }
+          #compose-component .widescreen #message-compose #compose-content #composeheaders .headers-table #formlinks-container {
+            border-bottom: 1px solid #c2c2c2; }
+            #compose-component .widescreen #message-compose #compose-content #composeheaders .headers-table #formlinks-container .formlinks {
+              float: right; }
+              #compose-component .widescreen #message-compose #compose-content #composeheaders .headers-table #formlinks-container .formlinks a {
+                color: #4f4f4f; }
+          #compose-component .widescreen #message-compose #compose-content #composeheaders .headers-table a.iconlink {
+            color: #4f4f4f; }
+        #compose-component .widescreen #message-compose #compose-content #composeview-bottom #body-container {
+          margin: 0em;
+          padding: 0em; }
+          #compose-component .widescreen #message-compose #compose-content #composeview-bottom #body-container #composebodycontainer {
+            height: calc(calc(100vh - 320px - 10px) - 20px); }
+        #compose-component .widescreen #message-compose #compose-content #composeview-bottom #composebody {
+          height: calc(calc(100vh - 320px - 10px) - 20px) !important; }
+        #compose-component .widescreen #message-compose #compose-content #composeview-bottom #compose-attachments {
+          height: calc(calc(100vh - 320px - 10px) - 20px); }
+
+/*# sourceMappingURL=compose.css.map */

@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+#responseedit-component {
+  background-color: white;
+  font-family: "Roboto", sans-serif !important; }
+  #responseedit-component #save-button-container .submit-button {
+    background-color: white !important;
+    border-radius: 0.5em;
+    border: 1px solid #cccccc;
+    border-bottom: 0.15em solid #204c6f;
+    color: #204c6f;
+    font-weight: bold; }
+  #responseedit-component h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4d4d4d; }
+  #responseedit-component legend {
+    color: #4d4d4d;
+    font-weight: bold;
+    font-size: 1.5em; }
+  #responseedit-component label {
+    font-size: 1.1em;
+    color: #4d4d4d; }
+  #responseedit-component tr td {
+    padding: 0.8em; }
+    #responseedit-component tr td input[type="checkbox"] {
+      opacity: inherit;
+      pointer-events: all; }
+    #responseedit-component tr td input[type="radio"] {
+      opacity: inherit;
+      pointer-events: all; }
+    #responseedit-component tr td input[type="text"] {
+      background-color: white;
+      font-size: 1.1em;
+      border: 1px solid #e6e6e6;
+      border-bottom: 1px solid #204c6f;
+      border-radius: 1em;
+      text-align: center;
+      margin: 0em;
+      height: 2em;
+      line-height: 2em; }
+    #responseedit-component tr td input[type="text"]:focus {
+      border-bottom: 1px solid #204c6f;
+      -webkit-box-shadow: 0 1px 0 0 #204c6f;
+      box-shadow: 0 1px 0 0 #204c6f; }
+    #responseedit-component tr td .select-dropdown {
+      background-color: white;
+      font-size: 1.1em;
+      border: 1px solid #e6e6e6;
+      border-radius: 1em;
+      text-align: center;
+      margin: 0em;
+      height: 2em;
+      line-height: 2em; }
+    #responseedit-component tr td .dropdown-content {
+      height: auto; }
+      #responseedit-component tr td .dropdown-content li {
+        height: 1em;
+        line-height: 1em; }
+        #responseedit-component tr td .dropdown-content li span {
+          color: #4d4d4d;
+          font-size: 1em;
+          padding: 1em; }
+
+/*# sourceMappingURL=responseedit.css.map */

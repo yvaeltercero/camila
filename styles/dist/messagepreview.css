@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+#messagepreview-component {
+  font-family: "Roboto", sans-serif;
+  background-color: white; }
+  #messagepreview-component .toolbar {
+    background-color: #F5F5F5;
+    height: 50px;
+    line-height: 50px;
+    max-height: 50px;
+    margin: 0px; }
+    #messagepreview-component .toolbar #mailtoolbar {
+      max-height: 50px;
+      overflow: auto; }
+    #messagepreview-component .toolbar #messagetoolbar {
+      height: 50px;
+      line-height: 50px; }
+      #messagepreview-component .toolbar #messagetoolbar .toolbar-button {
+        padding-left: 0.7em;
+        padding-right: 0.7em;
+        font-size: 1em;
+        height: 30px;
+        line-height: 30px;
+        background-color: white;
+        color: #8f8f8f;
+        border: 1px solid #c2c2c2;
+        border-radius: 0.5em;
+        text-align: center; }
+        #messagepreview-component .toolbar #messagetoolbar .toolbar-button i.left {
+          font-size: 22.5px;
+          margin-right: 0.2em; }
+        #messagepreview-component .toolbar #messagetoolbar .toolbar-button i.right {
+          font-size: 22.5px;
+          margin-left: 0em;
+          cursor: pointer; }
+        #messagepreview-component .toolbar #messagetoolbar .toolbar-button span {
+          font-weight: bolder; }
+      #messagepreview-component .toolbar #messagetoolbar .dropdown {
+        font-size: 0em;
+        width: 0em; }
+  #messagepreview-component #message-subject-options {
+    margin-bottom: 0px;
+    padding: 0em 1em 0em 0em;
+    background-color: #F4F4F4; }
+    #messagepreview-component #message-subject-options div.subject {
+      font-size: 14px;
+      font-weight: bold;
+      padding: 1em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+    #messagepreview-component #message-subject-options #message-options {
+      margin-top: 10px;
+      padding: 0em; }
+  #messagepreview-component #message-headers-options {
+    background-color: gainsboro;
+    margin-bottom: 0px;
+    border-bottom: 1px #c2c2c2; }
+    #messagepreview-component #message-headers-options .headers-table .adr a {
+      font-size: 1em;
+      font-weight: bold;
+      color: #767676; }
+    #messagepreview-component #message-headers-options .headers-table td {
+      padding: 0.3em; }
+    #messagepreview-component #message-headers-options #full-headers {
+      background-color: white;
+      border-top-right-radius: 0.5em;
+      border-top-left-radius: 0.5em;
+      max-height: 100px;
+      overflow: auto; }
+      #messagepreview-component #message-headers-options #full-headers #headers-source {
+        padding: 1em;
+        font-family: monospace;
+        font-size: 1em;
+        color: #767676; }
+  #messagepreview-component #show-more-left {
+    padding: 0.5em;
+    margin: 0px;
+    float: left; }
+    #messagepreview-component #show-more-left a {
+      color: #767676; }
+  #messagepreview-component #show-more-right {
+    padding: 0em;
+    margin: 0px;
+    float: right; }
+    #messagepreview-component #show-more-right a {
+      color: #767676; }
+  #messagepreview-component #message-preview {
+    background-color: white; }
+    #messagepreview-component #message-preview #remote-objects-message {
+      background-color: #f7769f;
+      color: white; }
+    #messagepreview-component #message-preview #attachment-list {
+      background-color: #cfcfcf;
+      padding: 1em; }
+    #messagepreview-component #message-preview #messagebody {
+      padding: 2em; }
+
+/*# sourceMappingURL=messagepreview.css.map */

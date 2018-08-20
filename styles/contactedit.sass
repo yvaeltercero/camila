@@ -1,0 +1,68 @@
+$back-color: #F5F5F5
+$font-color: darken($back-color, 50%)
+$bottom-color: #204c6f
+
+@import url('https://fonts.googleapis.com/css?family=Roboto')
+
+html
+  background-color: white
+  font-family: 'Roboto', sans-serif
+  body
+    background-color: white
+    font-family: 'Roboto', sans-serif
+
+  div.contact-header
+    font-size: 1rem
+    font-weight: bold
+    padding: 5px
+    border-bottom: 1px solid lighten($font-color, 20%)
+
+  fieldset
+    background-color: white
+    margin-bottom: 2em
+    border: 0em
+
+    legend
+      color: $font-color
+      font-weight: bold
+      font-size: 1.2em
+
+    label
+      font-size: 1.1em
+      color: $font-color
+
+    tr
+      td
+        padding: 0.8em
+
+    input[type="checkbox"]
+      opacity: inherit !important
+      pointer-events: all !important
+
+    input[type="radio"]
+      opacity: inherit !important
+      pointer-events: all !important
+
+    input[type="text"]
+      background-color: white !important
+      font-size: 1.1em !important
+      border: 1px solid darken($back-color, 10%) !important
+      border-bottom: 1px solid $bottom-color !important
+      border-radius: 1em !important
+      text-align: center !important
+      margin-bottom: 1em !important
+      height: 2em !important
+      line-height: 2em !important
+
+    input[type="text"]:focus
+      border-bottom: 1px solid $bottom-color !important
+      -webkit-box-shadow: 0 1px 0 0 $bottom-color !important
+      box-shadow: 0 1px 0 0 $bottom-color !important
+
+  .submit-button
+    background-color: white !important
+    border-radius: 0.5em !important
+    border: 1px solid darken(white, 20%) !important
+    border-bottom: 0.15em solid $bottom-color !important
+    color: $bottom-color !important
+    font-weight: bold !important

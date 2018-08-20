@@ -1,0 +1,198 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+
+<head>
+	<title>
+		<roundcube:object name="pagetitle" />
+	</title>
+	<roundcube:include file="/includes/links.html" />
+	<link rel="stylesheet" type="text/css" href="/thirdparty/materialize/css/materialize.css" />
+	<link rel="stylesheet" type="text/css" href="/styles/dist/messagepreview.css" />
+</head>
+
+<body class="iframe fullheight">
+	<div style="display: none" id="header-container">
+		<roundcube:include file="/includes/header.html" />
+	</div>
+
+	<div id="messagepreview-component">
+		<div class="row toolbar" id="toolbar" style="display: none">
+			<div class="col xs12 s12 m12 l12 xl12">
+				<h2 id="aria-label-toolbar" class="voice"><roundcube:label name="arialabeltoolbar" /></h2>
+				<div id="messagetoolbar" class="toolbar" role="toolbar" aria-labelledby="aria-label-toolbar">
+					<roundcube:include file="/includes/mailtoolbar.html" />
+				</div>
+			</div>
+		</div>
+
+		<div class="row" id="message-subject-options">
+			<div class="col xs9 s9 m9 l6 xl6">
+				<div class="subject"><span onmouseover="rcube_webmail.long_subject_title(this)"><span class="voice"><roundcube:label name="subject" />: </span>
+					<roundcube:object name="messageHeaders" valueOf="subject" />
+					</span>
+				</div>
+			</div>
+			<div class="col xs3 s3 m3 l3 xl6 right-align" id="message-options">
+				<div id="countcontrols" role="toolbar" aria-labelledby="aria-label-messagetoolbar">
+					<h2 id="aria-label-messagetoolbar" class="voice"><roundcube:label name="arialabelmessageactions" /></h2>
+					<roundcube:if condition="env:optional_format=='text'" />
+					<span class="buttongroup">
+							<roundcube:button command="change-format" prop="html" type="link" class="button first changeformat html selected" innerClass="icon" title="changeformathtml" content="HTML" /><roundcube:button command="change-format" prop="text" type="link" class="button last changeformat text" classSel="button changeformat text pressed" innerClass="icon" title="changeformattext" content="Text" />
+						</span>
+					<roundcube:elseif condition="env:optional_format=='html'" /> &nbsp;
+					<span class="buttongroup">
+							<roundcube:button command="change-format" prop="html" type="link" class="button first changeformat html" classSel="button changeformat html pressed" innerClass="icon" title="changeformathtml" content="HTML" /><roundcube:button command="change-format" prop="text" type="link" class="button last changeformat text selected" innerClass="icon" title="changeformattext" content="Text" />
+						</span>
+					<roundcube:endif />
+					<div class="hide-on-med-and-down" style="display: inline">
+						<roundcube:if condition="env:mailbox != config:drafts_mbox || env:message_context">
+							&nbsp;
+							<roundcube:button command="reply" type="link" class="button reply" classSel="button reply pressed" innerClass="icon" title="replytomessage" label="replytomessage" />
+							<roundcube:button command="reply-all" type="link" class="button replyall" classSel="button replyall pressed" innerClass="icon" title="replytoallmessage" label="replytoallmessage" />
+							<roundcube:button command="forward" type="link" class="button forward" classSel="button forward pressed" innerClass="icon" title="forwardmessage" label="forwardmessage" />
+							<roundcube:endif />
+							<roundcube:if condition="!env:message_context">
+								&nbsp;
+								<roundcube:button command="extwin" type="link" class="button extwin" classSel="button extwin pressed" id="extwin-link" innerClass="icon" title="openinextwin" label="openinextwin" />
+								<roundcube:endif />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" id="message-headers-options">
+			<div class="col s1 m1 l1 xl1">
+				<div class="row" id="show-more-left">
+					<a href="#details" id="previewheaderstoggle" aria-expanded="false"><i id="show-more-icon" class="tiny material-icons" title="<roundcube:label name='togglemoreheaders' />">add</i></a>
+				</div>
+			</div>
+			<div class="col s10 m10 l10 xl10">
+				<table class="headers-table" id="preview-shortheaders">
+					<tbody>
+						<tr>
+							<roundcube:if condition="env:mailbox == config:drafts_mbox || env:mailbox == config:sent_mbox">
+								<td class="header-title">
+									<roundcube:label name="to" />
+								</td>
+								<td class="header from">
+									<roundcube:object name="messageHeaders" valueOf="to" max="3" addicon="/images/addcontact.png" />
+								</td>
+								<roundcube:else />
+								<td class="header-title">
+									<roundcube:label name="from" />
+								</td>
+								<td class="header from">
+									<roundcube:object name="messageHeaders" valueOf="from" addicon="/images/addcontact.png" />
+								</td>
+								<roundcube:endif />
+								<td class="header-title">
+									<roundcube:label name="date" />
+								</td>
+								<td class="header date"><span><roundcube:object name="messageHeaders" valueOf="date" /></span></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<roundcube:object name="messageHeaders" id="preview-allheaders" class="headers-table" addicon="/images/addcontact.png" max="10" exclude="subject,replyto" />
+				<roundcube:object name="messageFullHeaders" id="full-headers" />
+			</div>
+			<div class="col s1 m1 l1 xl1">
+				<div class="row" id="show-more-right">
+					<a href="#fullheaders" id="fullheaderstoggle" aria-expanded="false">
+						<ia id="show-full-headers-icon" class="tiny material-icons">arrow_drop_down</ia>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div id="message-preview">
+			<h2 id="aria-label-messageattachments" class="voice"><roundcube:label name="attachments" /></h2>
+			<roundcube:object name="messageAttachments" id="attachment-list" class="attachmentslist" />
+			<h2 id="aria-label-messagebody" class="voice"><roundcube:label name="arialabelmessagebody" /></h2>
+			<roundcube:object name="messageObjects" id="message-objects" />
+			<roundcube:object name="messageBody" id="messagebody" headertableclass="message-partheaders headers-table" />
+		</div>
+	</div>
+
+	<script>
+		$('#reply-button').html('<i class="material-icons">reply</i>');
+		$('#reply-all-button').html('<i class="material-icons">reply_all</i>');
+		$('#forward-button').html('<i class="material-icons">forward</i>');
+		$('#window-button').html('<i class="material-icons">desktop_windows</i>');
+		$('#preview-allheaders').hide();
+
+		$('#previewheaderstoggle').on('click', function() {
+			$('#preview-shortheaders').toggle();
+			$('#preview-allheaders').toggle();
+			if ($('#show-more-icon').html() === 'add') {
+				$('#show-more-icon').html('remove');
+			} else {
+				$('#show-more-icon').html('add');
+			}
+		});
+		$('#fullheaderstoggle').on('click', function() {
+			$('.more-headers').click();
+			if ($('#show-full-headers-icon').html() === 'arrow_drop_down') {
+				$('#show-full-headers-icon').html('arrow_drop_up');
+			} else {
+				$('#show-full-headers-icon').html('arrow_drop_down');
+			}
+		});
+	</script>
+	<script>
+		const mq = window.matchMedia("(max-width: 992px)");
+
+		mq.addListener(handleMediaQuery);
+
+		function handleMediaQuery(mediaQuery) {
+			if (mediaQuery.matches) {
+				$('#header-component').addClass('mobile-header');
+			} else {
+				$('#header-component').removeClass('mobile-header');
+			}
+		}
+		$(document).ready(function() {
+			handleMediaQuery(mq);
+		});
+	</script>
+	<script type="text/javascript">
+		if (window.frameElement) {
+
+		} else {
+			$('#header-container').show();
+			$('#toolbar').show();
+		}
+	</script>
+	<script type="text/javascript">
+		var buttons = [
+			// class, icon
+			['.checkmail', 'refresh'],
+			['.compose', 'email'],
+			['.reply', 'reply'],
+			['.replyall', 'reply_all', 'replyallmenulink'],
+			['.forward', 'forward', 'forwardmenulink'],
+			['.delete', 'delete'],
+			['.move', 'move_to_inbox'],
+			['.print', 'print'],
+			['.mark', 'markunread_mailbox'],
+			['.more', 'more']
+		];
+		buttons.forEach(function(tuple) {
+			var klass = tuple[0];
+			var icon = tuple[1];
+			var link = tuple[2];
+
+			$('#toolbar').find(klass).html('<i class="material-icons left">{}</i><span class="hide-on-med-and-down">{}</span>'.format(icon, $('#toolbar').find(klass).html()));
+
+			if (link !== undefined) {
+				$('#toolbar').find(klass).html($(tuple[0]).html() + '<i class="material-icons right" id="{}-clicker">arrow_drop_down</i>'.format(link));
+				$('#{}-clicker'.format(link)).on('click', function(e) {
+					e.stopPropagation();
+					$('#{}'.format(link)).click();
+				})
+			}
+		});
+	</script>
+</body>
+
+</html>

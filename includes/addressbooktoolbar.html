@@ -1,0 +1,20 @@
+<!-- import -->
+<roundcube:button command="import" type="link" class="btn toolbar-button z-depth-0 import disabled" classAct="btn toolbar-button z-depth-0 import" classSel="btn toolbar-button z-depth-0 import pressed" label="import" title="importcontacts" />
+
+<!-- export -->
+<roundcube:button command="export" type="link" class="btn toolbar-button z-depth-0 export disabled" classAct="btn toolbar-button z-depth-0 export" classSel="btn toolbar-button z-depth-0 export pressed" label="export" title="exportvcards" />
+<a href="#export" class="dropdown" id="exportmenulink" onclick="return UI.toggle_popup('exportmenu',event)" aria-haspopup="true" aria-expanded="false" aria-owns="exportmenu-menu" tabindex="0"><roundcube:label name="arialabelcontactexportoptions" /></a>
+
+<roundcube:button command="compose" type="link" class="btn toolbar-button z-depth-0 compose disabled" classAct="btn toolbar-button z-depth-0 compose" classSel="btn toolbar-button z-depth-0 compose pressed" label="compose" title="writenewmessage" />
+
+<roundcube:button command="print" type="link" class="btn toolbar-button z-depth-0 print disabled" classAct="btn toolbar-button z-depth-0 print" classSel="btn toolbar-button z-depth-0 print pressed" label="print" title="printcontact" />
+
+<roundcube:button command="advanced-search" type="link" class="btn toolbar-button z-depth-0 search disabled" classAct="btn toolbar-button z-depth-0 search" classSel="btn toolbar-button z-depth-0 search pressed" label="advanced" title="advsearch" />
+
+<div id="exportmenu" class="popupmenu" aria-hidden="true">
+  <h3 id="aria-label-exportmenu" class="voice"><roundcube:label name="arialabelcontactexportoptions" /></h3>
+  <ul id="exportmenu-menu" class="toolbarmenu" role="menu" aria-labelledby="aria-label-exportmenu">
+    <roundcube:button type="link-menuitem" command="export" label="exportall" prop="sub" class="exportalllink" classAct="exportalllink active" />
+    <roundcube:button type="link-menuitem" command="export-selected" label="exportsel" prop="sub" class="exportsellink" classAct="exportsellink active" />
+  </ul>
+</div>

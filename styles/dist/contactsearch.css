@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+html {
+  font-family: "Roboto", sans-serif !important; }
+  html body {
+    font-family: "Roboto", sans-serif !important; }
+  html h2 {
+    font-size: 2rem !important; }
+  html input[type="checkbox"] {
+    opacity: inherit !important;
+    pointer-events: all !important; }
+  html input[type="radio"] {
+    opacity: inherit !important;
+    pointer-events: all !important; }
+  html input[type="text"] {
+    background-color: white !important;
+    font-size: 1.1em !important;
+    border: 1px solid gainsboro !important;
+    border-bottom: 1px solid #204c6f !important;
+    border-radius: 1em !important;
+    text-align: center !important;
+    margin-bottom: 1em !important;
+    height: 2em !important;
+    line-height: 2em !important; }
+  html input[type="text"]:focus {
+    border-bottom: 1px solid #204c6f !important;
+    -webkit-box-shadow: 0 1px 0 0 #204c6f !important;
+    box-shadow: 0 1px 0 0 #204c6f !important; }
+  html .submit-button {
+    background-color: white !important;
+    border-radius: 0.5em !important;
+    border: 1px solid #cccccc !important;
+    border-bottom: 0.15em solid #204c6f !important;
+    color: #204c6f !important;
+    font-weight: bold !important; }
+
+/*# sourceMappingURL=contactsearch.css.map */

@@ -1,0 +1,164 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+
+<head>
+	<title>
+		<roundcube:object name="pagetitle" />
+	</title>
+	<roundcube:include file="/includes/links.html" />
+	<roundcube:if condition="config:enable_spellcheck" />
+		<link rel="stylesheet" type="text/css" href="/googiespell.css" />
+	<roundcube:endif />
+	<link rel="stylesheet" type="text/css" href="/thirdparty/materialize/css/materialize.css" />
+	<link rel="stylesheet" type="text/css" href="/styles/dist/compose.css" />
+</head>
+
+<body class="noscroll">
+	<roundcube:include file="/includes/header.html" />
+
+	<div id="compose-component">
+
+		<!-- toolbar -->
+		<div class="row toolbar">
+			<div class="col s12 m12 l12">
+				<h2 id="aria-label-toolbar" class="voice"><roundcube:label name="arialabeltoolbar" /></h2>
+				<div id="messagetoolbar" class="toolbar fullwidth" role="toolbar" aria-labelledby="aria-label-toolbar">
+					<roundcube:include file="/includes/composetoolbar.html" />
+				</div>
+			</div>
+		</div>
+
+		<div class="row widescreen">
+			<div id="contacts-sidebar-container" class="col l2 xl2 hide-on-med-and-down">
+				<div id="contacts-sidebar">
+					<div id="sidebar-content">
+						<div id="aria-label-composecontacts" class="contacts-header">
+							<roundcube:label name="contacts" />
+						</div>
+						<div role="search" aria-labelledby="aria-label-composequicksearch" class="search-component">
+							<h3 id="aria-label-composequicksearch" class="voice"><roundcube:label name="arialabelcontactquicksearch" /></h3>
+							<label for="contactsearchbox" class="voice">asd<roundcube:label name="arialabelcontactsearchbox" /></label>
+							<roundcube:object name="searchform" id="contactsearchbox" placeholder="Buscar" />
+						</div>
+						<roundcube:object name="addressbooks" id="directorylist" summary="ariasummarycomposecontacts" />
+						<roundcube:object name="addresslist" id="contacts-table" noheader="true" role="listbox" />
+					</div>
+					<div id="sidebar-footer">
+						<div class="row center-align">
+							<div class="col l4 xl4">
+								<roundcube:button command="add-recipient" prop="to" type="link" title="to" class="listbutton addto disabled" classAct="listbutton addto" innerClass="inner" content="To+" />
+							</div>
+							<div class="col l4 xl4">
+								<roundcube:button command="add-recipient" prop="cc" type="link" title="cc" class="listbutton addcc disabled" classAct="listbutton addcc" innerClass="inner" content="Cc+" />
+							</div>
+							<div class="col l4 xl4">
+								<roundcube:button command="add-recipient" prop="bcc" type="link" title="bcc" class="listbutton addbcc disabled" classAct="listbutton addbcc" innerClass="inner" content="Bcc+" />
+								<roundcube:container name="compose-contacts-toolbar" id="compose-contacts-toolbar" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="message-compose-container" class="col xs12 s12 m12 l10 xl0">
+				<div id="message-compose">
+					<roundcube:form name="form" method="post" id="compose-content" id="message-compose-form">
+						<div id="composeheaders" role="region" aria-labelledby="aria-label-composeheaders">
+							<h2 id="aria-label-composeheaders" class="voice"><roundcube:label name="arialabelmessageheaders" /></h2>
+
+					    <a href="#options" id="composeoptionstoggle" class="moreheaderstoggle" title="<roundcube:label name='togglecomposeoptions' />" aria-expanded="false"><span class="iconlink"></span></a>
+
+							<roundcube:include file="/includes/composeheaders.html" />
+							<roundcube:include file="/includes/composeoptions.html" />
+						</div>
+
+						<div id="composeview-bottom">
+							<div class="col xs12 s12 m12 l10 xl10" id="body-container">
+								<div id="composebodycontainer">
+									<label for="composebody" class="voice"><roundcube:label name="arialabelmessagebody" /></label>
+									<roundcube:object name="composeBody" id="composebody" form="form" cols="70" rows="20" tabindex="1" />
+								</div>
+							</div>
+							<div class="col xs12 s12 m12 l2 xl2" id="attachment-container">
+								<div id="compose-attachments" role="region" aria-labelledby="aria-label-composeattachments" class="droptarget">
+						      <h2 id="aria-label-composeattachments" class="voice"><roundcube:label name="attachments" /></h2>
+						      <div style="text-align:center; margin-bottom:10px">
+						        <roundcube:object name="composeAttachmentForm" mode="hint" />
+						        <a class="button" tabindex="1" href="#" onclick="rcmail.upload_input('uploadform')">
+						          <roundcube:label name="addattachment" />
+						        </a>
+						      </div>
+						      <roundcube:object name="composeAttachmentList" id="attachment-list" class="attachmentslist" tabindex="1" />
+						      <roundcube:object name="fileDropArea" id="compose-attachments" />
+						    </div>
+							</div>
+					  </div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<roundcube:include file="/includes/composemenus.html" />
+	<!-- <roundcube:include file="/includes/footer.html" /> -->
+</body>
+
+<script type="text/javascript" defer>
+	$(document).ready(function() {
+		$("#_to").removeAttr("style")
+		$("#_cc").removeAttr("style")
+		$("#_bcc").removeAttr("style")
+	});
+</script>
+<script>
+	const mq = window.matchMedia("(max-width: 992px)");
+
+	mq.addListener(handleMediaQuery);
+
+	function handleMediaQuery(mediaQuery) {
+		if (mediaQuery.matches) {
+			$('#header-component').addClass('mobile-header');
+		} else {
+			$('#header-component').removeClass('mobile-header');
+		}
+	}
+	$(document).ready(function() {
+		handleMediaQuery(mq);
+	});
+</script>
+<script>
+	String.prototype.format = function () {
+		var i = 0, args = arguments;
+		return this.replace(/{}/g, function () {
+			return typeof args[i] != 'undefined' ? args[i++] : '';
+		});
+	};
+	var buttons = [
+		// class, icon
+		['.back', 'arrow_back'],
+		['.close', 'close'],
+		['.send', 'send'],
+		['.savedraft', 'drafts'],
+		['.spellcheck', 'spellcheck'],
+		['.attach', 'attach_file'],
+		['.insertsig', 'text_fields'],
+		['.responses', 'reply'],
+		['.encrypt', 'enhanced_encryption']
+	];
+	buttons.forEach(function(tuple) {
+		var klass = tuple[0];
+		var icon = tuple[1];
+		var link = tuple[2];
+
+		$('#compose-toolbar').find(klass).html('<i class="material-icons left">{}</i><span class="hide-on-med-and-down">{}</span>'.format(icon, $('#compose-toolbar').find(klass).html()));
+
+		if (link !== undefined) {
+			$('#compose-toolbar').find(klass).html($(tuple[0]).html() + '<i class="material-icons right" id="{}-clicker">arrow_drop_down</i>'.format(link));
+			$('#{}-clicker'.format(link)).on('click', function(e) {
+				e.stopPropagation();
+				$('#{}'.format(link)).click();
+			})
+		}
+	});
+</script>
+
+</html>

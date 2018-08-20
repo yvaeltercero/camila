@@ -1,0 +1,135 @@
+$back-color: #F5F5F5
+$font-color: darken($back-color, 50%)
+$header-color: #F4F4F4
+$toolbar-height: 50px
+$folder-list-text-color: #888888
+$forder-list-border-color: #bababa
+$folder-list-selected-color: #c7c5c5
+$folder-list-back-color: #cbcbcb
+$alert-message: #f7769f
+$topline-height: 20px
+$nav-height: 60px
+$header-height: $topline-height + $nav-height
+$toolbar-height: 50px
+@import url('https://fonts.googleapis.com/css?family=Roboto')
+
+#messagepreview-component
+  font-family: 'Roboto', sans-serif
+  background-color: white
+
+  .toolbar
+    background-color: $back-color
+    height: $toolbar-height
+    line-height: $toolbar-height
+    max-height: $toolbar-height
+    margin: 0px
+
+    #mailtoolbar
+      max-height: $toolbar-height
+      overflow: auto
+
+    #messagetoolbar
+      height: $toolbar-height
+      line-height: $toolbar-height
+
+      .toolbar-button
+        padding-left: 0.7em
+        padding-right: 0.7em
+        font-size: 1em
+        height: $toolbar-height * 0.60
+        line-height: $toolbar-height * 0.60
+        background-color: white
+        color: lighten($font-color, 10%)
+        border: 1px solid darken($back-color, 20%)
+        border-radius: 0.5em
+        text-align: center
+
+        i.left
+          font-size: $toolbar-height * 0.45
+          margin-right: 0.2em
+
+        i.right
+          font-size: $toolbar-height * 0.45
+          margin-left: 0em
+          cursor: pointer
+
+        span
+          font-weight: bolder
+
+      .dropdown
+        font-size: 0em
+        width: 0em
+
+  #message-subject-options
+    margin-bottom: 0px
+    padding: 0em 1em 0em 0em
+    background-color: $header-color
+
+    div.subject
+      font-size: 14px
+      font-weight: bold
+      padding: 1em
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+
+    #message-options
+      margin-top: 10px
+      padding: 0em
+
+  #message-headers-options
+    background-color: darken($back-color, 10%)
+    margin-bottom: 0px
+    border-bottom: 1px lighten($font-color, 30%)
+
+    .headers-table
+      .adr
+        a
+          font-size: 1em
+          font-weight: bold
+          color: $font-color
+      td
+        padding: 0.3em
+
+    #full-headers
+      background-color: white
+      border-top-right-radius: 0.5em
+      border-top-left-radius: 0.5em
+      max-height: 100px
+      overflow: auto
+
+      #headers-source
+        padding: 1em
+        font-family: monospace
+        font-size: 1em
+        color: $font-color
+
+  #show-more-left
+    padding: 0.5em
+    margin: 0px
+    float: left
+
+    a
+      color: $font-color
+
+  #show-more-right
+    padding: 0em
+    margin: 0px
+    float: right
+
+    a
+      color: $font-color
+
+  #message-preview
+    background-color: white
+
+    #remote-objects-message
+      background-color: $alert-message
+      color: white
+
+    #attachment-list
+      background-color: darken($back-color, 15%)
+      padding: 1em
+
+    #messagebody
+      padding: 2em

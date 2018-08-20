@@ -1,0 +1,32 @@
+<div id="compose-toolbar">
+  <!-- back -->
+  <roundcube:button command="list" type="link" class="btn toolbar-button z-depth-0 back disabled" classAct="btn toolbar-button z-depth-0 back" label="cancel" condition="!env:extwin" tabindex="2" />
+
+  <!-- close -->
+  <roundcube:button command="close" type="link" class="btn toolbar-button z-depth-0 close disabled" classAct="btn toolbar-button z-depth-0 close" label="cancel" condition="env:extwin" tabindex="2" />
+
+  <!-- send -->
+  <roundcube:button command="send" type="link" class="btn toolbar-button z-depth-0 send disabled" classAct="btn toolbar-button z-depth-0 send" label="send" title="sendmessage" tabindex="2" />
+
+  <!-- save draft -->
+  <roundcube:button command="savedraft" type="link" class="btn toolbar-button z-depth-0 savedraft disabled" classAct="btn toolbar-button z-depth-0 savedraft" label="save" title="savemessage" tabindex="2" />
+
+  <!-- spellcheck -->
+  <roundcube:button command="spellcheck" type="link" class="btn toolbar-button z-depth-0 spellcheck disabled" classAct="btn toolbar-button z-depth-0 spellcheck" classSel="btn toolbar-button z-depth-0 spellcheck pressed" label="spellcheck" title="checkspelling" tabindex="2" />
+  <a href="#languages" class="dropdown" id="spellmenulink" onclick="UI.toggle_popup('spellmenu',event);return false" aria-haspopup="true" aria-expanded="false" tabindex="2">Select Spell Language</a>
+
+  <!-- add attachment -->
+  <roundcube:button name="addattachment" type="link" class="btn toolbar-button z-depth-0 attach" label="attach" title="addattachment" onclick="rcmail.upload_input('uploadform')" aria-haspopup="true" aria-expanded="false" tabindex="2" />
+
+  <!-- insert signature -->
+  <roundcube:button command="insert-sig" type="link" class="btn toolbar-button z-depth-0 insertsig disabled" classAct="btn toolbar-button z-depth-0 insertsig" label="signature" title="insertsignature" tabindex="2" />
+
+  <!-- responses -->
+  <a href="#responses" class="btn toolbar-button z-depth-0 responses" label="responses" title="<roundcube:label name='insertresponse' />" id="responsesmenulink" unselectable="on" onmousedown="return false" onclick="UI.toggle_popup('responsesmenu',event);return false" tabindex="2"
+    aria-haspopup="true" aria-expanded="false" aria-owns="textresponsesmenu">
+    <roundcube:label name="responses" />
+  </a>
+
+  <!-- compose encrypted -->
+  <roundcube:button command="compose-encrypted" type="link" class="btn toolbar-button z-depth-0 encrypt disabled" classAct="btn toolbar-button z-depth-0 encrypt" classSel="btn toolbar-button z-depth-0 encrypt selected" label="encrypt" title="encryptmessagemailvelope" tabindex="2" style="display:none" />
+</div>

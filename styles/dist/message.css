@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+html, body {
+  background-color: #F5F5F5;
+  color: #767676;
+  width: 100%;
+  height: 100vh;
+  font-family: "Roboto", sans-serif !important; }
+
+#message-component {
+  width: 100%;
+  height: calc(100vh - 130px); }
+  #message-component .countdisplay {
+    display: inline; }
+  #message-component .toolbar {
+    height: 50px;
+    line-height: 50px;
+    margin: 0px; }
+    #message-component .toolbar #messagetoolbar {
+      height: 50px;
+      line-height: 50px; }
+      #message-component .toolbar #messagetoolbar .toolbar-button {
+        padding-left: 0.7em;
+        padding-right: 0.7em;
+        font-size: 1em;
+        height: 30px;
+        line-height: 30px;
+        background-color: white;
+        color: #8f8f8f;
+        border: 1px solid #c2c2c2;
+        border-radius: 0.5em;
+        text-align: center; }
+        #message-component .toolbar #messagetoolbar .toolbar-button i.left {
+          font-size: 22.5px;
+          margin-right: 0.2em; }
+        #message-component .toolbar #messagetoolbar .toolbar-button i.right {
+          font-size: 22.5px;
+          margin-left: 0em;
+          cursor: pointer; }
+        #message-component .toolbar #messagetoolbar .toolbar-button span {
+          font-weight: bolder; }
+      #message-component .toolbar #messagetoolbar .dropdown {
+        font-size: 0em;
+        width: 0em; }
+  #message-component .widescreen {
+    margin-bottom: 0em; }
+    #message-component .widescreen #sidebar {
+      background-color: white;
+      position: relative;
+      height: calc(100vh - 130px - 10px);
+      border-radius: 1em;
+      border: 1px solid gainsboro; }
+      #message-component .widescreen #sidebar #sidebar-header {
+        height: 40px;
+        line-height: 40px;
+        background-color: #F4F4F4;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em; }
+        #message-component .widescreen #sidebar #sidebar-header span {
+          font-size: 1em;
+          font-weight: bold;
+          padding-left: 1em; }
+      #message-component .widescreen #sidebar #mailboxcontainer {
+        height: calc(100vh - 170px - 10px); }
+        #message-component .widescreen #sidebar #mailboxcontainer #folderlist-content {
+          overflow: auto; }
+          #message-component .widescreen #sidebar #mailboxcontainer #folderlist-content #mailboxlist {
+            height: calc(100vh - 170px - 10px); }
+            #message-component .widescreen #sidebar #mailboxcontainer #folderlist-content #mailboxlist li.mailbox {
+              color: #9c9c9c;
+              font-size: 1.2em;
+              padding-top: 0.25em;
+              padding-bottom: 0.25em;
+              padding-left: 1em;
+              border-bottom: 0.5px solid whitesmoke; }
+              #message-component .widescreen #sidebar #mailboxcontainer #folderlist-content #mailboxlist li.mailbox a {
+                color: #9c9c9c;
+                display: block; }
+              #message-component .widescreen #sidebar #mailboxcontainer #folderlist-content #mailboxlist li.mailbox a:visited {
+                color: #9c9c9c;
+                display: block; }
+              #message-component .widescreen #sidebar #mailboxcontainer #folderlist-content #mailboxlist li.mailbox li.mailbox {
+                font-size: 1em;
+                border: none; }
+            #message-component .widescreen #sidebar #mailboxcontainer #folderlist-content #mailboxlist li.mailbox.selected a {
+              font-weight: bold; }
+    #message-component .widescreen #message {
+      height: calc(100vh - 130px - 10px);
+      border: 1px solid #ededed;
+      background-color: white;
+      border-radius: 1em;
+      padding: 0em;
+      margin-bottom: 0em; }
+      #message-component .widescreen #message #remote-objects-message {
+        background-color: #f7769f;
+        color: white; }
+      #message-component .widescreen #message #subject-and-navigation {
+        height: 40px;
+        line-height: 40px;
+        background-color: #F4F4F4;
+        border: 1px solid gainsboro;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+        margin-bottom: 1px; }
+        #message-component .widescreen #message #subject-and-navigation div.subject {
+          font-size: 1.2em;
+          font-weight: bold;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
+        #message-component .widescreen #message #subject-and-navigation .header-button {
+          padding-left: 0.2em;
+          padding-right: 0.2em;
+          font-size: 1em;
+          height: 24px;
+          line-height: 24px;
+          background-color: white;
+          color: #8f8f8f;
+          border: 1px solid #c2c2c2;
+          border-radius: 0.5em;
+          text-align: center; }
+      #message-component .widescreen #message #headers-and-message {
+        background-color: white;
+        overflow: auto;
+        height: calc(100vh - 170px - 10px);
+        border-bottom-left-radius: 1em;
+        border-bottom-right-radius: 1em;
+        padding: 0em;
+        margin: 0em; }
+        #message-component .widescreen #message #headers-and-message #headers {
+          background-color: gainsboro;
+          border: 1px solid gainsboro;
+          margin: 0;
+          height: 100px; }
+          #message-component .widescreen #message #headers-and-message #headers .headers-table {
+            margin-left: 0.25em; }
+            #message-component .widescreen #message #headers-and-message #headers .headers-table .adr a {
+              font-size: 1em;
+              font-weight: bold;
+              color: #767676; }
+            #message-component .widescreen #message #headers-and-message #headers .headers-table td {
+              padding: 0.25em; }
+          #message-component .widescreen #message #headers-and-message #headers #show-more-right {
+            padding: 0em;
+            margin: 0px;
+            float: right; }
+            #message-component .widescreen #message #headers-and-message #headers #show-more-right a {
+              color: #767676; }
+        #message-component .widescreen #message #headers-and-message #full-headers-container {
+          height: 100px;
+          overflow: auto;
+          padding: 0em;
+          margin: 0em; }
+          #message-component .widescreen #message #headers-and-message #full-headers-container #full-headers {
+            background-color: #F5F5F5; }
+            #message-component .widescreen #message #headers-and-message #full-headers-container #full-headers #all-headers #headers-source {
+              padding: 1em 5em 1em 5em;
+              font-family: monospace;
+              font-size: 1em;
+              color: #767676; }
+        #message-component .widescreen #message #headers-and-message #message-content {
+          padding: 0em;
+          margin: 0em;
+          height: calc(100vh - calc(100vh - 170px - 10px) - $headers-height);
+          overflow: auto;
+          border-bottom-left-radius: 1em;
+          border-bottom-right-radius: 1em; }
+          #message-component .widescreen #message #headers-and-message #message-content #attachment-list {
+            background-color: #cfcfcf;
+            padding: 1em; }
+          #message-component .widescreen #message #headers-and-message #message-content #messagebody {
+            padding: 2em; }
+
+/*# sourceMappingURL=message.css.map */

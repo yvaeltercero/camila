@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+body {
+  background-color: #EEE;
+  color: #204c6f;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh; }
+
+#login-component #content {
+  height: calc(100vh - 50px);
+  max-height: calc(100vh - 50px);
+  font-family: "Roboto", sans-serif !important; }
+  #login-component #content #login-form {
+    background-color: white;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 4em;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 7px; }
+    #login-component #content #login-form img {
+      padding: 2em; }
+    #login-component #content #login-form div.login-legend {
+      padding-left: 1em;
+      color: #303030;
+      font-size: 1.2em;
+      font-weight: bold; }
+    #login-component #content #login-form div.login-text {
+      color: #303030;
+      padding-left: 1em;
+      font-size: 1.2em;
+      font-weight: normal; }
+  #login-component #content .center-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 75%;
+    width: 100%; }
+  #login-component #content .login-header {
+    font-size: 1em; }
+  #login-component #content label {
+    color: #204c6f; }
+  #login-component #content input#rcmloginuser, #login-component #content input#rcmloginpwd {
+    background-color: #EEE;
+    border: 1px solid lightgrey;
+    border-bottom: 4px solid lightgrey;
+    background-color: white;
+    color: #204c6f;
+    border-radius: 5px;
+    outline: none;
+    height: 2rem;
+    width: 100%;
+    font-size: 1rem;
+    margin: 0px 0px 10px 0px;
+    padding: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center; }
+  #login-component #content input#rcmloginsubmit {
+    background-color: #41ade7;
+    border: 1px solid #204c6f;
+    border-bottom: 0.2em solid #204c6f;
+    border-radius: 5px;
+    color: #EEE;
+    border-radius: 5px;
+    outline: none;
+    height: 2rem;
+    width: 100%;
+    font-size: 1rem;
+    margin: 0px 0px 10px 0px;
+    padding: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center; }
+  #login-component #content label[for=rcmloginuser] {
+    font-size: 1.2em; }
+  #login-component #content label[for=rcmloginpwd] {
+    font-size: 1.2em; }
+  #login-component #content td, #login-component #content th {
+    padding: 2px 10px;
+    display: block; }
+  #login-component #content tr {
+    margin-top: 10px; }
+#login-component #bottomline {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #204c6f;
+  color: #EEE; }
+  #login-component #bottomline .support-link {
+    color: white; }
+
+/*# sourceMappingURL=login.css.map */

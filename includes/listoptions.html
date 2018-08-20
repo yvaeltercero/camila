@@ -1,0 +1,148 @@
+<div id="listoptions" class="propform popupdialog" role="dialog" aria-labelledby="aria-label-listoptions" aria-hidden="true">
+	<h2 id="aria-label-listoptions" class="voice"><roundcube:label name="arialabelmessagelistoptions" /></h2>
+	<roundcube:if condition="!in_array('layout', (array)config:dont_override)" />
+	<fieldset id="listoptions-layout" class="floating">
+		<legend>
+			<roundcube:label name="layout" />
+		</legend>
+		<ul>
+      <li>
+				<input type="radio" id="id_widescreen" name="layout" value="widescreen"/>
+      	<label for="id_widescreen"><roundcube:label name="layoutwidescreen" /></label>
+			</li>
+      <li>
+        <input type="radio" id="id_desktop" name="layout" value="desktop"/>
+      	<label for="id_desktop"><roundcube:label name="layoutdesktop" /></label>
+      </li>
+      <li>
+        <input type="radio" id="id_list" name="layout" value="list"/>
+      	<label for="id_list"><roundcube:label name="layoutlist" /></label>
+      </li>
+		</ul>
+	</fieldset>
+	<roundcube:endif />
+	<roundcube:if condition="!in_array('list_cols', (array)config:dont_override)" />
+	<fieldset id="listoptions-columns" class="floating">
+		<legend>
+			<roundcube:label name="listcolumns" />
+		</legend>
+		<ul>
+			<li>
+				<input type="checkbox" id="threads" name="list_col[]" value="threads" checked disabled/>
+      	<label for="threads"><roundcube:label name="threads" /></label>
+			</li>
+			<li>
+				<input type="checkbox" id="id_fromto" name="list_col[]" value="fromto"/>
+      	<label for="id_fromto"><roundcube:label name="fromto" /></label>
+			</li>
+      <li>
+				<input type="checkbox" id="id_from" name="list_col[]" value="from"/>
+      	<label for="id_from"><roundcube:label name="from" /></label>
+			</li>
+      <li>
+				<input type="checkbox" id="id_to" name="list_col[]" value="to"/>
+      	<label for="id_to"><roundcube:label name="to" /></label>
+			</li>
+      <li>
+				<input type="checkbox" id="id_replyto" name="list_col[]" value="replyto"/>
+      	<label for="id_replyto"><roundcube:label name="replyto" /></label>
+			</li>
+      <li>
+				<input type="checkbox" id="id_cc" name="list_col[]" value="cc"/>
+      	<label for="id_cc"><roundcube:label name="cc" /></label>
+			</li>
+      <li>
+				<input type="checkbox" id="id_date" name="list_col[]" value="date"/>
+      	<label for="id_date"><roundcube:label name="date" /></label>
+			</li>
+      <li>
+				<input type="checkbox" id="id_size" name="list_col[]" value="size"/>
+      	<label for="id_size"><roundcube:label name="size" /></label>
+			</li>
+      <li>
+				<input type="checkbox" id="id_status" name="list_col[]" value="status"/>
+      	<label for="id_status"><roundcube:label name="readstatus" /></label>
+			</li>
+      <li>
+				<input type="checkbox" id="id_attachment" name="list_col[]" value="attachment"/>
+      	<label for="id_attachment"><roundcube:label name="attachment" /></label>
+			</li>
+      <li>
+				<input type="checkbox" id="id_flag" name="list_col[]" value="flag"/>
+      	<label for="id_flag"><roundcube:label name="flag" /></label>
+			</li>
+      <li>
+				<input type="checkbox" id="id_priority" name="list_col[]" value="priority"/>
+      	<label for="id_priority"><roundcube:label name="priority" /></label>
+			</li>
+		</ul>
+	</fieldset>
+	<roundcube:endif />
+	<roundcube:if condition="!in_array('message_sort_col', (array)config:dont_override)" />
+	<fieldset id="listoptions-sortcol" class="floating">
+		<legend>
+			<roundcube:label name="listsorting" />
+		</legend>
+		<ul>
+      <li>
+				<input type="radio" id="id_sort_col" name="sort_col" value=""/>
+      	<label for="id_sort_col"><roundcube:label name="nonesort" /></label>
+			</li>
+      <li>
+				<input type="radio" id="id_sort_arrival" name="sort_col" value="arrival"/>
+      	<label for="id_sort_arrival"><roundcube:label name="arrival" /></label>
+			</li>
+      <li>
+				<input type="radio" id="id_sort_sentdate" name="sort_col" value="sentdate"/>
+      	<label for="id_sort_sentdate"><roundcube:label name="sentdate" /></label>
+			</li>
+      <li>
+				<input type="radio" id="id_sort_subject" name="sort_col" value="subject"/>
+      	<label for="id_sort_subject"><roundcube:label name="subject" /></label>
+			</li>
+      <li>
+				<input type="radio" id="id_sort_fromto" name="sort_col" value="fromto"/>
+      	<label for="id_sort_fromto"><roundcube:label name="fromto" /></label>
+			</li>
+      <li>
+				<input type="radio" id="id_sort_from" name="sort_col" value="from"/>
+      	<label for="id_sort_from"><roundcube:label name="from" /></label>
+			</li>
+      <li>
+				<input type="radio" id="id_sort_to" name="sort_col" value="to"/>
+      	<label for="id_sort_to"><roundcube:label name="to" /></label>
+			</li>
+      <li>
+				<input type="radio" id="id_sort_cc" name="sort_col" value="cc"/>
+      	<label for="id_sort_cc"><roundcube:label name="cc" /></label>
+			</li>
+      <li>
+				<input type="radio" id="id_sort_size" name="sort_col" value="size"/>
+      	<label for="id_sort_size"><roundcube:label name="size" /></label>
+			</li>
+		</ul>
+	</fieldset>
+	<roundcube:endif />
+	<roundcube:if condition="!in_array('message_sort_order', (array)config:dont_override)" />
+	<fieldset id="listoptions-sortord" class="floating">
+		<legend>
+			<roundcube:label name="listorder" />
+		</legend>
+		<ul>
+      <li>
+				<input type="radio" id="id_asc" name="sort_ord" value="ASC"/>
+      	<label for="id_asc"><roundcube:label name="asc" /></label>
+			</li>
+      <li>
+				<input type="radio" id="id_desc" name="sort_ord" value="DESC"/>
+      	<label for="id_desc"><roundcube:label name="desc" /></label>
+			</li>
+		</ul>
+	</fieldset>
+	<roundcube:endif />
+	<br style="clear:both" />
+	<div class="center-align">
+		<roundcube:button command="menu-save" id="listmenusave" type="input" class="waves-effect waves-light btn blue darken-4 mainaction" label="save" />
+		<roundcube:button command="menu-close" prop="messagelistmenu" id="listmenucancel" type="input" class="waves-effect waves-light btn light-blue darken-3" label="cancel" />
+	</div>
+</div>

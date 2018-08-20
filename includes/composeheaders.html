@@ -1,0 +1,49 @@
+<table class="headers-table compose-headers">
+<tbody>
+  <tr>
+    <td class="title"><label for="_from"><roundcube:label name="from" /></label></td>
+    <td class="editfield">
+      <roundcube:object name="composeHeaders" part="from" form="form" id="_from" tabindex="1" />
+      <a href="#identities" onclick="return rcmail.command('identities')" class="iconlink edit" tabindex="0"><roundcube:label name="editidents" /></a>
+    </td>
+  </tr><tr>
+    <td class="title top"><label for="_to"><roundcube:label name="to" /></label></td>
+    <td class="editfield"><roundcube:object name="composeHeaders" part="to" form="form" id="_to" cols="70" rows="1" tabindex="1" aria-required="true" /></td>
+  </tr><tr id="compose-cc" style="display: none;">
+    <td class="title top">
+      <label for="_cc"><roundcube:label name="cc" /></label>
+      <a href="#cc" onclick="return UI.hide_header_row('cc');" class="iconbutton cancel" title="<roundcube:label name='delete' />" tabindex="3"><roundcube:label name="delete" /> <roundcube:label name="cc" /></a>
+    </td>
+    <td class="editfield"><roundcube:object name="composeHeaders" part="cc" form="form" id="_cc" cols="70" rows="1" tabindex="1" /></td>
+  </tr><tr id="compose-bcc" style="display: none;">
+    <td class="title top">
+      <label for="_bcc"><roundcube:label name="bcc" /></label>
+      <a href="#bcc" onclick="return UI.hide_header_row('bcc');" class="iconbutton cancel" title="<roundcube:label name='delete' />" tabindex="3"><roundcube:label name="delete" /> <roundcube:label name="bcc" /></a>
+    </td>
+    <td class="editfield"><roundcube:object name="composeHeaders" part="bcc" form="form" id="_bcc" cols="70" rows="1" tabindex="1" /></td>
+  </tr><tr id="compose-replyto" style="display: none;">
+    <td class="title top">
+      <label for="_replyto"><roundcube:label name="replyto" /></label>
+      <a href="#replyto" onclick="return UI.hide_header_row('replyto');" class="iconbutton cancel" title="<roundcube:label name='delete' />" tabindex="3"><roundcube:label name="delete" /> <roundcube:label name="replyto" /></a>
+    </td>
+    <td class="editfield"><roundcube:object name="composeHeaders" part="replyto" form="form" id="_replyto" size="70" tabindex="1" /></td>
+  </tr><tr id="compose-followupto" style="display: none;">
+    <td class="title top">
+      <label for="_followupto"><roundcube:label name="followupto" /></label>
+      <a href="#followupto" onclick="return UI.hide_header_row('followupto');" class="iconbutton cancel" title="<roundcube:label name='delete' />" tabindex="3"><roundcube:label name="delete" /> <roundcube:label name="followupto" /></a>
+    </td>
+    <td class="editfield"><roundcube:object name="composeHeaders" part="followupto" form="form" id="_followupto" size="70" tabindex="1" /></td>
+  </tr><tr id="formlinks-container">
+    <td></td>
+    <td class="formlinks">
+      <a href="#cc" onclick="return UI.show_header_row('cc')" id="cc-link" class="iconlink add" tabindex="3"><roundcube:label name="addcc" /></a>
+      <a href="#bcc" onclick="return UI.show_header_row('bcc')" id="bcc-link" class="iconlink add" tabindex="3"><roundcube:label name="addbcc" /></a>
+      <a href="#reply-to" onclick="return UI.show_header_row('replyto')" id="replyto-link" class="iconlink add" tabindex="3"><roundcube:label name="addreplyto" /></a>
+      <a href="#followup-to" onclick="return UI.show_header_row('followupto')" id="followupto-link" class="iconlink add" tabindex="3"><roundcube:label name="addfollowupto" /></a>
+    </td>
+  </tr><tr>
+    <td class="title"><label for="compose-subject"><roundcube:label name="subject" /></label></td>
+    <td class="editfield"><roundcube:object name="composeSubject" id="compose-subject" form="form" tabindex="1" /></td>
+  </tr>
+</tbody>
+</table>

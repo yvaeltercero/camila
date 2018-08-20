@@ -1,0 +1,35 @@
+<roundcube:object name="doctype" value="html5" />
+<html>
+
+<head>
+	<title>
+		<roundcube:object name="pagetitle" />
+	</title>
+	<roundcube:include file="/includes/links.html" />
+	<link rel="stylesheet" type="text/css" href="/thirdparty/materialize/css/materialize.css"/>
+	<link rel="stylesheet" type="text/css" href="/styles/dist/settingsedit.css" />
+</head>
+
+<body id="settingsedit-component">
+	<div class="container">
+		<h2><roundcube:object name="sectionname" /></h2>
+
+		<roundcube:object name="folderdetails" class="not-propform" />
+			<div class="center-align" id="save-button-container">
+				<roundcube:button command="save" type="input" class="btn submit-button" label="save" />
+				<roundcube:if condition="!strlen(request:_mbox)" />
+					<input type="button" value="<roundcube:label name="cancel" />" class="btn submit-button" onclick="history.back()" />&nbsp;
+				<roundcube:endif />
+			</div>
+		</form>
+	</div>
+	<roundcube:include file="/includes/footer.html" />
+</body>
+
+<script type="text/javascript" src="/thirdparty/materialize/js/materialize.js"></script>
+<script>
+	$(document).ready(function() {
+    $('select').material_select();
+  });
+</script>
+</html>
